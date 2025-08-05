@@ -1,0 +1,275 @@
+{
+    "metadata": {
+      "version": "1.0",
+      "created": "2025-07-28",
+      "last_updated": "2025-07-28",
+      "total_users": 5,
+      "company_name": "ProRecruitment Solutions"
+    },
+    "users": [
+      {
+        "user_id": "USR001",
+        "personal_info": {
+          "first_name": "אדמין",
+          "last_name": "ראשי",
+          "full_name": "אדמין ראשי",
+          "email": "admin@prorecruitment.com",
+          "phone": "050-1111111",
+          "profile_image": null
+        },
+        "account_info": {
+          "role": "SUPER_ADMIN",
+          "department": "ניהול",
+          "status": "ACTIVE",
+          "created_date": "2025-01-01",
+          "last_login": "2025-07-28T09:00:00Z",
+          "login_count": 245,
+          "two_factor_enabled": true
+        },
+        "permissions": {
+          "users_management": true,
+          "candidates_management": true,
+          "vendors_management": true,
+          "clients_management": true,
+          "tasks_management": true,
+          "orders_management": true,
+          "financial_reports": true,
+          "system_settings": true,
+          "audit_logs": true,
+          "export_data": true
+        },
+        "settings": {
+          "language": "hebrew",
+          "timezone": "Asia/Jerusalem",
+          "notifications": {
+            "email": true,
+            "sms": true,
+            "push": true
+          },
+          "dashboard_layout": "advanced"
+        }
+      },
+      {
+        "user_id": "USR002",
+        "personal_info": {
+          "first_name": "שרה",
+          "last_name": "כהן",
+          "full_name": "שרה כהן",
+          "email": "sarah.cohen@prorecruitment.com",
+          "phone": "050-2222222",
+          "profile_image": null
+        },
+        "account_info": {
+          "role": "HR_MANAGER",
+          "department": "משאבי אנוש",
+          "status": "ACTIVE",
+          "created_date": "2025-01-15",
+          "last_login": "2025-07-27T16:30:00Z",
+          "login_count": 178,
+          "two_factor_enabled": false
+        },
+        "permissions": {
+          "users_management": false,
+          "candidates_management": true,
+          "vendors_management": false,
+          "clients_management": true,
+          "tasks_management": true,
+          "orders_management": false,
+          "financial_reports": false,
+          "system_settings": false,
+          "audit_logs": false,
+          "export_data": true
+        },
+        "settings": {
+          "language": "hebrew",
+          "timezone": "Asia/Jerusalem",
+          "notifications": {
+            "email": true,
+            "sms": false,
+            "push": true
+          },
+          "dashboard_layout": "standard"
+        }
+      },
+      {
+        "user_id": "USR003",
+        "personal_info": {
+          "first_name": "דני",
+          "last_name": "לוי",
+          "full_name": "דני לוי",
+          "email": "dani.levi@techcorp.com",
+          "phone": "02-7777777",
+          "profile_image": null
+        },
+        "account_info": {
+          "role": "CLIENT",
+          "department": "לקוח חיצוני",
+          "status": "ACTIVE",
+          "created_date": "2025-02-10",
+          "last_login": "2025-07-25T14:20:00Z",
+          "login_count": 89,
+          "two_factor_enabled": true,
+          "client_id": "CLI001"
+        },
+        "permissions": {
+          "users_management": false,
+          "candidates_management": false,
+          "vendors_management": false,
+          "clients_management": false,
+          "tasks_management": false,
+          "orders_management": true,
+          "financial_reports": false,
+          "system_settings": false,
+          "audit_logs": false,
+          "export_data": false,
+          "view_assigned_candidates": true,
+          "approve_candidates": true,
+          "create_job_requests": true
+        },
+        "settings": {
+          "language": "hebrew",
+          "timezone": "Asia/Jerusalem",
+          "notifications": {
+            "email": true,
+            "sms": true,
+            "push": false
+          },
+          "dashboard_layout": "client"
+        }
+      },
+      {
+        "user_id": "USR004",
+        "personal_info": {
+          "first_name": "מיכל",
+          "last_name": "אברהם",
+          "full_name": "מיכל אברהם",
+          "email": "michal@techvendor.com",
+          "phone": "03-5555555",
+          "profile_image": null
+        },
+        "account_info": {
+          "role": "VENDOR",
+          "department": "ספק חיצוני",
+          "status": "ACTIVE",
+          "created_date": "2025-02-01",
+          "last_login": "2025-07-26T11:45:00Z",
+          "login_count": 67,
+          "two_factor_enabled": false,
+          "vendor_id": "VEN001"
+        },
+        "permissions": {
+          "users_management": false,
+          "candidates_management": false,
+          "vendors_management": false,
+          "clients_management": false,
+          "tasks_management": false,
+          "orders_management": false,
+          "financial_reports": false,
+          "system_settings": false,
+          "audit_logs": false,
+          "export_data": false,
+          "view_open_positions": true,
+          "submit_candidates": true,
+          "view_vendor_stats": true
+        },
+        "settings": {
+          "language": "hebrew",
+          "timezone": "Asia/Jerusalem",
+          "notifications": {
+            "email": true,
+            "sms": false,
+            "push": true
+          },
+          "dashboard_layout": "vendor"
+        }
+      },
+      {
+        "user_id": "USR005",
+        "personal_info": {
+          "first_name": "רמי",
+          "last_name": "דוד",
+          "full_name": "רמי דוד",
+          "email": "rami.david@prorecruitment.com",
+          "phone": "050-3333333",
+          "profile_image": null
+        },
+        "account_info": {
+          "role": "RECRUITER",
+          "department": "גיוס",
+          "status": "ACTIVE",
+          "created_date": "2025-03-01",
+          "last_login": "2025-07-28T08:15:00Z",
+          "login_count": 156,
+          "two_factor_enabled": true
+        },
+        "permissions": {
+          "users_management": false,
+          "candidates_management": true,
+          "vendors_management": false,
+          "clients_management": false,
+          "tasks_management": true,
+          "orders_management": false,
+          "financial_reports": false,
+          "system_settings": false,
+          "audit_logs": false,
+          "export_data": true,
+          "schedule_interviews": true,
+          "update_candidate_status": true
+        },
+        "settings": {
+          "language": "hebrew",
+          "timezone": "Asia/Jerusalem",
+          "notifications": {
+            "email": true,
+            "sms": true,
+            "push": true
+          },
+          "dashboard_layout": "recruiter"
+        }
+      }
+    ],
+    "roles_definitions": {
+      "SUPER_ADMIN": {
+        "name": "מנהל על",
+        "description": "גישה מלאה לכל המערכת",
+        "color": "#dc3545",
+        "level": 10
+      },
+      "HR_MANAGER": {
+        "name": "מנהל משאבי אנוש",
+        "description": "ניהול מועמדים ומשימות HR",
+        "color": "#007bff",
+        "level": 8
+      },
+      "RECRUITER": {
+        "name": "מגייס",
+        "description": "ניהול תהליכי גיוס",
+        "color": "#28a745",
+        "level": 6
+      },
+      "CLIENT": {
+        "name": "לקוח",
+        "description": "פתיחת משרות ואישור מועמדים",
+        "color": "#ffc107",
+        "level": 4
+      },
+      "VENDOR": {
+        "name": "ספק",
+        "description": "הגשת מועמדים למשרות",
+        "color": "#6f42c1",
+        "level": 3
+      }
+    },
+    "system_settings": {
+      "session_timeout_minutes": 120,
+      "password_policy": {
+        "min_length": 8,
+        "require_uppercase": true,
+        "require_numbers": true,
+        "require_special_chars": true
+      },
+      "max_failed_logins": 5,
+      "account_lockout_duration_minutes": 30,
+      "audit_retention_days": 365
+    }
+  }

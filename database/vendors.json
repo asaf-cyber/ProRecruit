@@ -1,0 +1,473 @@
+{
+    "metadata": {
+      "version": "1.0",
+      "created": "2025-07-28",
+      "last_updated": "2025-07-28",
+      "total_vendors": 4,
+      "active_vendors": 3
+    },
+    "vendors": [
+      {
+        "vendor_id": "VEN001",
+        "company_info": {
+          "company_name": "TechVendor Solutions",
+          "business_number": "515123456",
+          "vat_number": "123456789",
+          "established_year": 2018,
+          "company_size": "10-50 עובדים",
+          "website": "https://techvendor.com",
+          "description": "חברת השמה מתמחה בתחום הטכנולוגיה והפיתוח"
+        },
+        "contact_info": {
+          "primary_contact": {
+            "name": "מיכל אברהם",
+            "title": "מנהלת עסקים",
+            "email": "michal@techvendor.com",
+            "phone": "03-5555555",
+            "mobile": "050-1234567"
+          },
+          "secondary_contact": {
+            "name": "יוסי דוד",
+            "title": "מגייס בכיר",
+            "email": "yossi@techvendor.com",
+            "phone": "03-5555556",
+            "mobile": "050-2345678"
+          },
+          "address": {
+            "street": "רחוב הברזל 15",
+            "city": "תל אביב",
+            "postal_code": "6812508",
+            "country": "ישראל"
+          }
+        },
+        "specializations": {
+          "primary_fields": [
+            "פיתוח תוכנה",
+            "DevOps",
+            "סייבר",
+            "Data Science"
+          ],
+          "technologies": [
+            "JavaScript",
+            "Python",
+            "Java",
+            "React",
+            "Node.js",
+            "AWS",
+            "Docker",
+            "Kubernetes"
+          ],
+          "seniority_levels": [
+            "Junior",
+            "Mid-level", 
+            "Senior",
+            "Lead"
+          ],
+          "contract_types": [
+            "קבוע",
+            "זמני",
+            "פרילאנס",
+            "הקמת צוות"
+          ]
+        },
+        "business_terms": {
+          "commission_rate": 15,
+          "payment_terms": 30,
+          "guarantee_period_days": 90,
+          "replacement_policy": "החלפה חינם תוך 90 יום",
+          "minimum_monthly_placements": 2,
+          "volume_discounts": [
+            {
+              "min_placements": 5,
+              "discount_percentage": 2
+            },
+            {
+              "min_placements": 10,
+              "discount_percentage": 5
+            }
+          ]
+        },
+        "performance": {
+          "rating": 4.2,
+          "total_placements": 45,
+          "successful_placements": 38,
+          "success_rate": 84.4,
+          "average_time_to_fill_days": 18,
+          "active_candidates": 125,
+          "monthly_submissions": 15,
+          "client_satisfaction": 4.1
+        },
+        "contract_info": {
+          "contract_start_date": "2025-02-01",
+          "contract_end_date": "2026-01-31",
+          "auto_renewal": true,
+          "contract_status": "ACTIVE",
+          "signed_agreements": [
+            "הסכם שיתוף פעולה כללי",
+            "הסכם סודיות",
+            "נספח תנאי תשלום"
+          ]
+        },
+        "financial_info": {
+          "total_revenue_generated": 125000,
+          "outstanding_invoices": 15000,
+          "average_invoice_amount": 8500,
+          "payment_history": "תשלומים בזמן",
+          "credit_limit": 50000
+        },
+        "status": "ACTIVE",
+        "priority": "HIGH",
+        "notes": "ספק מצוין עם קצב הצבות גבוה ואיכות מועמדים טובה",
+        "created_date": "2025-02-01",
+        "last_updated": "2025-07-28"
+      },
+      {
+        "vendor_id": "VEN002",
+        "company_info": {
+          "company_name": "Elite IT Staffing",
+          "business_number": "515987654",
+          "vat_number": "987654321",
+          "established_year": 2015,
+          "company_size": "50-100 עובדים",
+          "website": "https://eliteitstaffing.com",
+          "description": "חברת השמה מתמחה בתפקידי IT בכירים וניהול"
+        },
+        "contact_info": {
+          "primary_contact": {
+            "name": "אורי שמיר",
+            "title": "מנכ\"ל",
+            "email": "uri@eliteitstaffing.com",
+            "phone": "04-8888888",
+            "mobile": "050-9876543"
+          },
+          "secondary_contact": {
+            "name": "רינה כהן",
+            "title": "מנהלת גיוס",
+            "email": "rina@eliteitstaffing.com",
+            "phone": "04-8888889",
+            "mobile": "050-8765432"
+          },
+          "address": {
+            "street": "שדרות בן גוריון 45",
+            "city": "חיפה",
+            "postal_code": "3200003",
+            "country": "ישראל"
+          }
+        },
+        "specializations": {
+          "primary_fields": [
+            "ניהול IT",
+            "אדריכלות מערכות",
+            "ניהול פרויקטים",
+            "CTO/VP R&D"
+          ],
+          "technologies": [
+            "Cloud Architecture",
+            "Microservices",
+            "Enterprise Solutions",
+            "Agile/Scrum",
+            "Team Leadership"
+          ],
+          "seniority_levels": [
+            "Senior",
+            "Lead",
+            "Principal",
+            "VP/Director"
+          ],
+          "contract_types": [
+            "קבוע",
+            "ייעוץ",
+            "הנהלה זמנית"
+          ]
+        },
+        "business_terms": {
+          "commission_rate": 20,
+          "payment_terms": 45,
+          "guarantee_period_days": 120,
+          "replacement_policy": "החלפה חינם תוך 120 יום + פיצוי חלקי",
+          "minimum_monthly_placements": 1,
+          "volume_discounts": [
+            {
+              "min_placements": 3,
+              "discount_percentage": 3
+            }
+          ]
+        },
+        "performance": {
+          "rating": 4.8,
+          "total_placements": 28,
+          "successful_placements": 26,
+          "success_rate": 92.9,
+          "average_time_to_fill_days": 35,
+          "active_candidates": 85,
+          "monthly_submissions": 8,
+          "client_satisfaction": 4.7
+        },
+        "contract_info": {
+          "contract_start_date": "2024-12-01",
+          "contract_end_date": "2025-11-30",
+          "auto_renewal": true,
+          "contract_status": "ACTIVE",
+          "signed_agreements": [
+            "הסכם שיתוף פעולה מתקדם",
+            "הסכם סודיות מורחב",
+            "הסכם בלעדיות חלקית"
+          ]
+        },
+        "financial_info": {
+          "total_revenue_generated": 180000,
+          "outstanding_invoices": 25000,
+          "average_invoice_amount": 15000,
+          "payment_history": "תשלומים מעולים",
+          "credit_limit": 75000
+        },
+        "status": "ACTIVE",
+        "priority": "HIGH",
+        "notes": "ספק איכותי מאוד לתפקידים בכירים, מחירים גבוהים אבל שווה את זה",
+        "created_date": "2024-12-01",
+        "last_updated": "2025-07-28"
+      },
+      {
+        "vendor_id": "VEN003",
+        "company_info": {
+          "company_name": "StartupTalent Hub",
+          "business_number": "515456789",
+          "vat_number": "456789123",
+          "established_year": 2020,
+          "company_size": "5-10 עובדים",
+          "website": "https://startuptalent.co.il",
+          "description": "חברה צעירה המתמחה בגיוס לסטארטאפים וחברות צמיחה"
+        },
+        "contact_info": {
+          "primary_contact": {
+            "name": "נועה לוי",
+            "title": "מייסדת ומנכ\"לית",
+            "email": "noa@startuptalent.co.il",
+            "phone": "09-9999999",
+            "mobile": "050-5555555"
+          },
+          "secondary_contact": {
+            "name": "דן אברהם",
+            "title": "מגייס ראשי",
+            "email": "dan@startuptalent.co.il",
+            "phone": "09-9999998",
+            "mobile": "050-4444444"
+          },
+          "address": {
+            "street": "רחוב ויצמן 12",
+            "city": "נתניה",
+            "postal_code": "4244012",
+            "country": "ישראל"
+          }
+        },
+        "specializations": {
+          "primary_fields": [
+            "פיתוח אפליקציות",
+            "Frontend Development",
+            "UX/UI Design",
+            "Growth Hacking"
+          ],
+          "technologies": [
+            "React Native",
+            "Flutter",
+            "Vue.js",
+            "React",
+            "Figma",
+            "Analytics Tools"
+          ],
+          "seniority_levels": [
+            "Junior",
+            "Mid-level",
+            "Senior"
+          ],
+          "contract_types": [
+            "קבוע",
+            "זמני",
+            "equity-based"
+          ]
+        },
+        "business_terms": {
+          "commission_rate": 12,
+          "payment_terms": 15,
+          "guarantee_period_days": 60,
+          "replacement_policy": "החלפה חינם תוך 60 יום",
+          "minimum_monthly_placements": 3,
+          "volume_discounts": [
+            {
+              "min_placements": 8,
+              "discount_percentage": 2
+            }
+          ]
+        },
+        "performance": {
+          "rating": 3.8,
+          "total_placements": 22,
+          "successful_placements": 18,
+          "success_rate": 81.8,
+          "average_time_to_fill_days": 12,
+          "active_candidates": 95,
+          "monthly_submissions": 12,
+          "client_satisfaction": 3.9
+        },
+        "contract_info": {
+          "contract_start_date": "2025-04-01",
+          "contract_end_date": "2026-03-31",
+          "auto_renewal": false,
+          "contract_status": "ACTIVE",
+          "signed_agreements": [
+            "הסכם שיתוף פעולה בסיסי",
+            "הסכם סודיות"
+          ]
+        },
+        "financial_info": {
+          "total_revenue_generated": 45000,
+          "outstanding_invoices": 8000,
+          "average_invoice_amount": 4500,
+          "payment_history": "תשלומים סבירים",
+          "credit_limit": 20000
+        },
+        "status": "ACTIVE",
+        "priority": "MEDIUM",
+        "notes": "ספק צעיר עם פוטנציאל, מהיר במציאת מועמדים אבל איכות משתנה",
+        "created_date": "2025-04-01",
+        "last_updated": "2025-07-28"
+      },
+      {
+        "vendor_id": "VEN004",
+        "company_info": {
+          "company_name": "Corporate Solutions Ltd",
+          "business_number": "515111222",
+          "vat_number": "111222333",
+          "established_year": 2012,
+          "company_size": "100+ עובדים",
+          "website": "https://corpsolutions.com",
+          "description": "חברה גדולה למשאבי אנוש וגיוס לחברות enterprise"
+        },
+        "contact_info": {
+          "primary_contact": {
+            "name": "שלמה כהן",
+            "title": "מנהל חטיבת IT",
+            "email": "shlomo@corpsolutions.com",
+            "phone": "02-6666666",
+            "mobile": "050-7777777"
+          },
+          "secondary_contact": {
+            "name": "יעל דוד",
+            "title": "מנהלת קשרי לקוחות",
+            "email": "yael@corpsolutions.com",
+            "phone": "02-6666667",
+            "mobile": "050-6666666"
+          },
+          "address": {
+            "street": "רחוב יפו 156",
+            "city": "ירושלים",
+            "postal_code": "9434312",
+            "country": "ישראל"
+          }
+        },
+        "specializations": {
+          "primary_fields": [
+            "Enterprise Solutions",
+            "ERP Implementation",
+            "Business Analysis",
+            "Project Management"
+          ],
+          "technologies": [
+            "SAP",
+            "Oracle",
+            "Microsoft Dynamics",
+            "Salesforce",
+            "Business Intelligence"
+          ],
+          "seniority_levels": [
+            "Mid-level",
+            "Senior",
+            "Lead",
+            "Consultant"
+          ],
+          "contract_types": [
+            "קבוע",
+            "פרויקט",
+            "ייעוץ"
+          ]
+        },
+        "business_terms": {
+          "commission_rate": 18,
+          "payment_terms": 60,
+          "guarantee_period_days": 180,
+          "replacement_policy": "החלפה מלאה תוך 180 יום",
+          "minimum_monthly_placements": 1,
+          "volume_discounts": []
+        },
+        "performance": {
+          "rating": 3.2,
+          "total_placements": 15,
+          "successful_placements": 11,
+          "success_rate": 73.3,
+          "average_time_to_fill_days": 45,
+          "active_candidates": 200,
+          "monthly_submissions": 6,
+          "client_satisfaction": 3.4
+        },
+        "contract_info": {
+          "contract_start_date": "2024-06-01",
+          "contract_end_date": "2025-05-31",
+          "auto_renewal": false,
+          "contract_status": "UNDER_REVIEW",
+          "signed_agreements": [
+            "הסכם שיתוף פעולה סטנדרטי"
+          ]
+        },
+        "financial_info": {
+          "total_revenue_generated": 85000,
+          "outstanding_invoices": 35000,
+          "average_invoice_amount": 12000,
+          "payment_history": "עיכובים תכופים",
+          "credit_limit": 30000
+        },
+        "status": "UNDER_REVIEW",
+        "priority": "LOW",
+        "notes": "ספק גדול אבל ביצועים לא משביעי רצון, בבדיקה לחידוש חוזה",
+        "created_date": "2024-06-01",
+        "last_updated": "2025-07-28"
+      }
+    ],
+    "vendor_categories": {
+      "PREMIUM": {
+        "name": "ספק מובחר",
+        "min_rating": 4.5,
+        "min_success_rate": 90,
+        "benefits": ["עדיפות בהזמנות", "תנאים מועדפים", "גישה למשרות VIP"]
+      },
+      "STANDARD": {
+        "name": "ספק סטנדרטי", 
+        "min_rating": 3.5,
+        "min_success_rate": 75,
+        "benefits": ["גישה רגילה למשרות", "תנאים בסיסיים"]
+      },
+      "PROBATION": {
+        "name": "ספק במבחן",
+        "min_rating": 0,
+        "min_success_rate": 0,
+        "benefits": ["גישה מוגבלת", "מעקב צמוד"]
+      }
+    },
+    "commission_structure": {
+      "default_rates": {
+        "junior": 12,
+        "mid_level": 15,
+        "senior": 18,
+        "lead": 20,
+        "executive": 25
+      },
+      "payment_terms": [15, 30, 45, 60],
+      "guarantee_periods": [60, 90, 120, 180]
+    },
+    "settings": {
+      "auto_invoice_generation": true,
+      "payment_reminder_days": [7, 3, 1],
+      "performance_review_frequency": "quarterly",
+      "min_rating_for_renewal": 3.0,
+      "max_outstanding_amount": 50000
+    }
+  }

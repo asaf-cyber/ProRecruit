@@ -1,0 +1,680 @@
+{
+    "metadata": {
+      "version": "1.0",
+      "created": "2025-07-28",
+      "last_updated": "2025-07-28",
+      "total_tasks": 8,
+      "active_tasks": 5
+    },
+    "tasks": [
+      {
+        "task_id": "TSK001",
+        "title": "ראיון טכני עם יוסי כהן",
+        "description": "ביצוע ראיון טכני מעמיק עם מועמד לתפקיד Full Stack Developer",
+        "category": "RECRUITMENT",
+        "priority": "HIGH",
+        "status": "IN_PROGRESS",
+        "created_date": "2025-07-25",
+        "due_date": "2025-07-30",
+        "estimated_hours": 2,
+        "actual_hours": 0,
+        "assignee": {
+          "user_id": "USR005",
+          "name": "רמי דוד",
+          "role": "RECRUITER"
+        },
+        "creator": {
+          "user_id": "USR002",
+          "name": "שרה כהן",
+          "role": "HR_MANAGER"
+        },
+        "related_entities": {
+          "candidate_id": "CAN001",
+          "client_id": "CLI001",
+          "position_id": "POS001"
+        },
+        "checklist": [
+          {
+            "item": "הכנת שאלות טכניות",
+            "completed": true,
+            "completed_date": "2025-07-26"
+          },
+          {
+            "item": "תיאום זמן עם מועמד",
+            "completed": true,
+            "completed_date": "2025-07-27"
+          },
+          {
+            "item": "ביצוע הראיון",
+            "completed": false
+          },
+          {
+            "item": "כתיבת משוב מפורט",
+            "completed": false
+          },
+          {
+            "item": "עדכון מערכת וקביעת שלב הבא",
+            "completed": false
+          }
+        ],
+        "comments": [
+          {
+            "comment_id": "COM001",
+            "user_id": "USR002",
+            "user_name": "שרה כהן",
+            "comment": "מועמד מעולה, חשוב לבדוק ידע ב-React ו-Node.js",
+            "timestamp": "2025-07-25T10:30:00Z"
+          },
+          {
+            "comment_id": "COM002",
+            "user_id": "USR005",
+            "user_name": "רמי דוד",
+            "comment": "קבענו לשלושי ב-14:00, אכין מטלה קטנה",
+            "timestamp": "2025-07-27T09:15:00Z"
+          }
+        ],
+        "attachments": [
+          {
+            "file_name": "technical_questions_fullstack.pdf",
+            "file_size": "245KB",
+            "uploaded_by": "USR005",
+            "upload_date": "2025-07-26"
+          }
+        ],
+        "tags": ["ראיון", "טכני", "fullstack", "דחוף"],
+        "last_updated": "2025-07-28"
+      },
+      {
+        "task_id": "TSK002",
+        "title": "הכנת הצעת עבודה למירי שמיר",
+        "description": "יצירת הצעת עבודה מפורטת כולל שכר, תנאים וחבילת הטבות",
+        "category": "HR_OPERATIONS",
+        "priority": "HIGH",
+        "status": "PENDING",
+        "created_date": "2025-07-24",
+        "due_date": "2025-07-29",
+        "estimated_hours": 3,
+        "actual_hours": 1.5,
+        "assignee": {
+          "user_id": "USR002",
+          "name": "שרה כהן",
+          "role": "HR_MANAGER"
+        },
+        "creator": {
+          "user_id": "USR001",
+          "name": "אדמין ראשי",
+          "role": "SUPER_ADMIN"
+        },
+        "related_entities": {},
+        "checklist": [
+          {
+            "item": "הכנת חומרי הדרכה",
+            "completed": true,
+            "completed_date": "2025-07-16"
+          },
+          {
+            "item": "הדרכה על מערכות המידע",
+            "completed": true,
+            "completed_date": "2025-07-18"
+          },
+          {
+            "item": "הדרכה על תהליכי גיוס",
+            "completed": true,
+            "completed_date": "2025-07-20"
+          },
+          {
+            "item": "סיור בלקוחות מרכזיים",
+            "completed": true,
+            "completed_date": "2025-07-22"
+          },
+          {
+            "item": "מבחן גמר והסמכה",
+            "completed": true,
+            "completed_date": "2025-07-24"
+          }
+        ],
+        "comments": [
+          {
+            "comment_id": "COM006",
+            "user_id": "USR002",
+            "user_name": "שרה כהן",
+            "comment": "המגייס החדש הראה התקדמות מעולה",
+            "timestamp": "2025-07-24T14:30:00Z"
+          }
+        ],
+        "attachments": [
+          {
+            "file_name": "training_materials_recruiter.pdf",
+            "file_size": "2.1MB",
+            "uploaded_by": "USR002",
+            "upload_date": "2025-07-16"
+          }
+        ],
+        "tags": ["הכשרה", "מגייס", "הדרכה", "הושלם"],
+        "completion_date": "2025-07-24",
+        "last_updated": "2025-07-25"
+      },
+      {
+        "task_id": "TSK007",
+        "title": "שיפור תהליך הראיונות",
+        "description": "ניתוח וייעול תהליכי הראיונות לקיצור זמנים והגברת דיוק",
+        "category": "PROCESS_IMPROVEMENT",
+        "priority": "MEDIUM",
+        "status": "IN_PROGRESS",
+        "created_date": "2025-07-22",
+        "due_date": "2025-08-10",
+        "estimated_hours": 15,
+        "actual_hours": 6,
+        "assignee": {
+          "user_id": "USR005",
+          "name": "רמי דוד",
+          "role": "RECRUITER"
+        },
+        "creator": {
+          "user_id": "USR002",
+          "name": "שרה כהן",
+          "role": "HR_MANAGER"
+        },
+        "related_entities": {},
+        "checklist": [
+          {
+            "item": "ניתוח נתוני ביצועים קיימים",
+            "completed": true,
+            "completed_date": "2025-07-24"
+          },
+          {
+            "item": "איסוף משובים ממגייסים",
+            "completed": true,
+            "completed_date": "2025-07-26"
+          },
+          {
+            "item": "זיהוי צווארי בקבוק",
+            "completed": false
+          },
+          {
+            "item": "הצעת שיפורים",
+            "completed": false
+          },
+          {
+            "item": "פיילוט תהליך חדש",
+            "completed": false
+          },
+          {
+            "item": "הטמעה מלאה",
+            "completed": false
+          }
+        ],
+        "comments": [
+          {
+            "comment_id": "COM007",
+            "user_id": "USR005",
+            "user_name": "רמי דוד",
+            "comment": "זיהיתי כמה נקודות לשיפור בשלב הטכני",
+            "timestamp": "2025-07-26T11:20:00Z"
+          }
+        ],
+        "attachments": [
+          {
+            "file_name": "interview_process_analysis.xlsx",
+            "file_size": "378KB",
+            "uploaded_by": "USR005",
+            "upload_date": "2025-07-24"
+          }
+        ],
+        "tags": ["שיפור", "תהליכים", "ראיונות", "יעילות"],
+        "last_updated": "2025-07-28"
+      },
+      {
+        "task_id": "TSK008",
+        "title": "סקר שביעות רצון לקוחות Q2",
+        "description": "ביצוע סקר מקיף לבדיקת שביעות רצון לקוחות ברבעון השני",
+        "category": "CLIENT_RELATIONS",
+        "priority": "LOW",
+        "status": "COMPLETED",
+        "created_date": "2025-06-30",
+        "due_date": "2025-07-15",
+        "estimated_hours": 8,
+        "actual_hours": 9,
+        "assignee": {
+          "user_id": "USR002",
+          "name": "שרה כהן",
+          "role": "HR_MANAGER"
+        },
+        "creator": {
+          "user_id": "USR001",
+          "name": "אדמין ראשי",
+          "role": "SUPER_ADMIN"
+        },
+        "related_entities": {
+          "client_id": "CLI001,CLI002,CLI003"
+        },
+        "checklist": [
+          {
+            "item": "הכנת שאלוני סקר",
+            "completed": true,
+            "completed_date": "2025-07-02"
+          },
+          {
+            "item": "שליחת סקרים ללקוחות",
+            "completed": true,
+            "completed_date": "2025-07-05"
+          },
+          {
+            "item": "איסוף תשובות",
+            "completed": true,
+            "completed_date": "2025-07-12"
+          },
+          {
+            "item": "ניתוח נתונים",
+            "completed": true,
+            "completed_date": "2025-07-14"
+          },
+          {
+            "item": "הכנת דוח סיכום",
+            "completed": true,
+            "completed_date": "2025-07-15"
+          }
+        ],
+        "comments": [
+          {
+            "comment_id": "COM008",
+            "user_id": "USR002",
+            "user_name": "שרה כהן",
+            "comment": "ציון ממוצע 4.2/5 - תוצאות טובות!",
+            "timestamp": "2025-07-15T16:00:00Z"
+          }
+        ],
+        "attachments": [
+          {
+            "file_name": "client_satisfaction_Q2_2025.pdf",
+            "file_size": "1.2MB",
+            "uploaded_by": "USR002",
+            "upload_date": "2025-07-15"
+          }
+        ],
+        "tags": ["סקר", "לקוחות", "שביעות רצון", "הושלם"],
+        "completion_date": "2025-07-15",
+        "last_updated": "2025-07-15"
+      }
+    ],
+    "task_categories": {
+      "RECRUITMENT": {
+        "name": "גיוס",
+        "description": "משימות הקשורות לתהליכי גיוס מועמדים",
+        "color": "#28a745"
+      },
+      "HR_OPERATIONS": {
+        "name": "פעילות HR",
+        "description": "משימות תפעוליות במשאבי אנוש",
+        "color": "#007bff"
+      },
+      "VENDOR_MANAGEMENT": {
+        "name": "ניהול ספקים",
+        "description": "משימות הקשורות לניהול ספקים",
+        "color": "#6f42c1"
+      },
+      "CLIENT_RELATIONS": {
+        "name": "קשרי לקוחות",
+        "description": "משימות הקשורות לשירות ושמירה על לקוחות",
+        "color": "#ffc107"
+      },
+      "FINANCE": {
+        "name": "כספים",
+        "description": "משימות פיננסיות וחשבונאות",
+        "color": "#dc3545"
+      },
+      "REPORTING": {
+        "name": "דיווח",
+        "description": "הכנת דוחות ומצגות",
+        "color": "#17a2b8"
+      },
+      "TRAINING": {
+        "name": "הכשרה",
+        "description": "הכשרה והדרכת עובדים",
+        "color": "#20c997"
+      },
+      "PROCESS_IMPROVEMENT": {
+        "name": "שיפור תהליכים",
+        "description": "פרויקטים לשיפור יעילות",
+        "color": "#fd7e14"
+      }
+    },
+    "priority_levels": {
+      "LOW": {
+        "name": "נמוכה",
+        "color": "#6c757d",
+        "sla_days": 14
+      },
+      "MEDIUM": {
+        "name": "בינונית",
+        "color": "#ffc107",
+        "sla_days": 7
+      },
+      "HIGH": {
+        "name": "גבוהה",
+        "color": "#dc3545",
+        "sla_days": 3
+      },
+      "URGENT": {
+        "name": "דחוף",
+        "color": "#fd0000",
+        "sla_days": 1
+      }
+    },
+    "status_types": {
+      "NOT_STARTED": {
+        "name": "לא התחיל",
+        "color": "#6c757d"
+      },
+      "IN_PROGRESS": {
+        "name": "בביצוע",
+        "color": "#007bff"
+      },
+      "PENDING": {
+        "name": "ממתין",
+        "color": "#ffc107"
+      },
+      "COMPLETED": {
+        "name": "הושלם",
+        "color": "#28a745"
+      },
+      "CANCELLED": {
+        "name": "בוטל",
+        "color": "#dc3545"
+      },
+      "ON_HOLD": {
+        "name": "בהמתנה",
+        "color": "#6f42c1"
+      }
+    },
+    "automation_rules": {
+      "overdue_reminders": {
+        "enabled": true,
+        "days_before_due": [3, 1],
+        "reminder_methods": ["email", "system_notification"]
+      },
+      "auto_assignment": {
+        "enabled": true,
+        "rules": [
+          {
+            "category": "RECRUITMENT",
+            "default_assignee": "USR005"
+          },
+          {
+            "category": "HR_OPERATIONS",
+            "default_assignee": "USR002"
+          }
+        ]
+      },
+      "status_updates": {
+        "enabled": true,
+        "notify_on_completion": true,
+        "notify_stakeholders": true
+      }
+    },
+    "settings": {
+      "default_estimated_hours": 4,
+      "auto_create_tasks_from_candidates": true,
+      "task_approval_required": false,
+      "time_tracking_enabled": true,
+      "collaborative_editing": true,
+      "file_upload_max_size_mb": 10
+    }
+  }
+          "name": "אדמין ראשי",
+          "role": "SUPER_ADMIN"
+        },
+        "related_entities": {
+          "candidate_id": "CAN002",
+          "client_id": "CLI001",
+          "position_id": "POS002"
+        },
+        "checklist": [
+          {
+            "item": "אישור תנאים עם לקוח",
+            "completed": true,
+            "completed_date": "2025-07-24"
+          },
+          {
+            "item": "הכנת מסמך הצעה",
+            "completed": true,
+            "completed_date": "2025-07-25"
+          },
+          {
+            "item": "בדיקה משפטית",
+            "completed": false
+          },
+          {
+            "item": "אישור סופי מהנהלה",
+            "completed": false
+          },
+          {
+            "item": "שליחה למועמדת",
+            "completed": false
+          }
+        ],
+        "comments": [
+          {
+            "comment_id": "COM003",
+            "user_id": "USR001",
+            "user_name": "אדמין ראשי",
+            "comment": "מועמדת מצוינת, נאשר תנאים טובים",
+            "timestamp": "2025-07-24T15:20:00Z"
+          }
+        ],
+        "attachments": [
+          {
+            "file_name": "offer_template_QA_manager.docx",
+            "file_size": "128KB",
+            "uploaded_by": "USR002",
+            "upload_date": "2025-07-25"
+          }
+        ],
+        "tags": ["הצעת עבודה", "QA", "מנהלת", "דחוף"],
+        "last_updated": "2025-07-28"
+      },
+      {
+        "task_id": "TSK003",
+        "title": "עדכון חוזה עם TechVendor Solutions",
+        "description": "חידוש וחתימה על הסכם שיתוף פעולה מעודכן עם ספק מוביל",
+        "category": "VENDOR_MANAGEMENT",
+        "priority": "MEDIUM",
+        "status": "IN_PROGRESS",
+        "created_date": "2025-07-20",
+        "due_date": "2025-08-05",
+        "estimated_hours": 8,
+        "actual_hours": 4,
+        "assignee": {
+          "user_id": "USR001",
+          "name": "אדמין ראשי",
+          "role": "SUPER_ADMIN"
+        },
+        "creator": {
+          "user_id": "USR001",
+          "name": "אדמין ראשי",
+          "role": "SUPER_ADMIN"
+        },
+        "related_entities": {
+          "vendor_id": "VEN001"
+        },
+        "checklist": [
+          {
+            "item": "סקירת הסכם קיים",
+            "completed": true,
+            "completed_date": "2025-07-21"
+          },
+          {
+            "item": "הכנת טיוטת הסכם חדש",
+            "completed": true,
+            "completed_date": "2025-07-23"
+          },
+          {
+            "item": "משא ומתן עם ספק",
+            "completed": false
+          },
+          {
+            "item": "אישור משפטי",
+            "completed": false
+          },
+          {
+            "item": "חתימת הסכם",
+            "completed": false
+          }
+        ],
+        "comments": [
+          {
+            "comment_id": "COM004",
+            "user_id": "USR001",
+            "user_name": "אדמין ראשי",
+            "comment": "ספק מצוין, נשפר תנאים לשנה הבאה",
+            "timestamp": "2025-07-21T11:00:00Z"
+          }
+        ],
+        "attachments": [
+          {
+            "file_name": "vendor_agreement_v2.pdf",
+            "file_size": "892KB",
+            "uploaded_by": "USR001",
+            "upload_date": "2025-07-23"
+          }
+        ],
+        "tags": ["חוזה", "ספק", "משפטי"],
+        "last_updated": "2025-07-28"
+      },
+      {
+        "task_id": "TSK004",
+        "title": "דוח ביצועים חודשי יולי",
+        "description": "הכנת דוח מפורט על ביצועי החברה, מועמדים, ספקים ולקוחות",
+        "category": "REPORTING",
+        "priority": "MEDIUM",
+        "status": "NOT_STARTED",
+        "created_date": "2025-07-28",
+        "due_date": "2025-08-02",
+        "estimated_hours": 6,
+        "actual_hours": 0,
+        "assignee": {
+          "user_id": "USR002",
+          "name": "שרה כהן",
+          "role": "HR_MANAGER"
+        },
+        "creator": {
+          "user_id": "USR001",
+          "name": "אדמין ראשי",
+          "role": "SUPER_ADMIN"
+        },
+        "related_entities": {},
+        "checklist": [
+          {
+            "item": "איסוף נתוני מועמדים",
+            "completed": false
+          },
+          {
+            "item": "איסוף נתוני ספקים",
+            "completed": false
+          },
+          {
+            "item": "איסוף נתוני לקוחות",
+            "completed": false
+          },
+          {
+            "item": "יצירת גרפים וחזותיים",
+            "completed": false
+          },
+          {
+            "item": "כתיבת סיכום ומסקנות",
+            "completed": false
+          },
+          {
+            "item": "הגשת דוח להנהלה",
+            "completed": false
+          }
+        ],
+        "comments": [],
+        "attachments": [],
+        "tags": ["דוח", "חודשי", "ביצועים", "נתונים"],
+        "last_updated": "2025-07-28"
+      },
+      {
+        "task_id": "TSK005",
+        "title": "מעקב אחר תשלומים של Enterprise Solutions",
+        "description": "בדיקת סטטוס חשבוניות ופניה לגבייה אם נדרש",
+        "category": "FINANCE",
+        "priority": "HIGH",
+        "status": "IN_PROGRESS",
+        "created_date": "2025-07-26",
+        "due_date": "2025-07-31",
+        "estimated_hours": 2,
+        "actual_hours": 0.5,
+        "assignee": {
+          "user_id": "USR001",
+          "name": "אדמין ראשי",
+          "role": "SUPER_ADMIN"
+        },
+        "creator": {
+          "user_id": "USR001",
+          "name": "אדמין ראשי",
+          "role": "SUPER_ADMIN"
+        },
+        "related_entities": {
+          "client_id": "CLI003"
+        },
+        "checklist": [
+          {
+            "item": "בדיקת חשבוניות פתוחות",
+            "completed": true,
+            "completed_date": "2025-07-26"
+          },
+          {
+            "item": "פניה לאיש קשר פיננסי",
+            "completed": false
+          },
+          {
+            "item": "קביעת תוכנית תשלומים",
+            "completed": false
+          },
+          {
+            "item": "החלטה על המשך שיתוף פעולה",
+            "completed": false
+          }
+        ],
+        "comments": [
+          {
+            "comment_id": "COM005",
+            "user_id": "USR001",
+            "user_name": "אדמין ראשי",
+            "comment": "יש חוב של 75,000 ₪ - חובה לטפל",
+            "timestamp": "2025-07-26T16:45:00Z"
+          }
+        ],
+        "attachments": [
+          {
+            "file_name": "outstanding_invoices_CLI003.xlsx",
+            "file_size": "45KB",
+            "uploaded_by": "USR001",
+            "upload_date": "2025-07-26"
+          }
+        ],
+        "tags": ["תשלומים", "חובות", "גבייה", "דחוף"],
+        "last_updated": "2025-07-28"
+      },
+      {
+        "task_id": "TSK006",
+        "title": "הכשרת מגייס חדש",
+        "description": "הדרכה מקיפה למגייס החדש על מערכות ותהליכי החברה",
+        "category": "TRAINING",
+        "priority": "LOW",
+        "status": "COMPLETED",
+        "created_date": "2025-07-15",
+        "due_date": "2025-07-25",
+        "estimated_hours": 12,
+        "actual_hours": 10,
+        "assignee": {
+          "user_id": "USR002",
+          "name": "שרה כהן",
+          "role": "HR_MANAGER"
+        },
+        "creator": {
+          "user_id": "USR001",
+
+
+          

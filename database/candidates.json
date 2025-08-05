@@ -1,0 +1,388 @@
+{
+    "metadata": {
+      "version": "1.0",
+      "created": "2025-07-28",
+      "last_updated": "2025-07-28",
+      "total_candidates": 6,
+      "active_candidates": 4
+    },
+    "candidates": [
+      {
+        "candidate_id": "CAN001",
+        "personal_info": {
+          "first_name": "יוסי",
+          "last_name": "כהן",
+          "full_name": "יוסי כהן",
+          "email": "yossi.cohen@gmail.com",
+          "phone": "050-1234567",
+          "age": 28,
+          "city": "תל אביב",
+          "address": "רחוב הרצל 15, תל אביב",
+          "linkedin_profile": "https://linkedin.com/in/yossi-cohen",
+          "github_profile": "https://github.com/yossi-cohen"
+        },
+        "professional_info": {
+          "desired_position": "מפתח Full Stack Senior",
+          "experience_level": "בכיר (5+ שנים)",
+          "current_salary": 22000,
+          "desired_salary": 25000,
+          "availability": "מיידית",
+          "notice_period_days": 0,
+          "programming_languages": ["JavaScript", "Python", "TypeScript", "React", "Node.js", "MongoDB"],
+          "frameworks": ["React", "Vue.js", "Express", "Django"],
+          "tools": ["Git", "Docker", "AWS", "Jenkins"],
+          "certifications": ["AWS Solutions Architect", "MongoDB Developer"],
+          "languages": ["עברית (שפת אם)", "אנגלית (שוטף)", "רוסית (בסיסי)"]
+        },
+        "recruitment_process": {
+          "current_stage": "ראיון_טכני",
+          "application_date": "2025-07-10",
+          "source": "LinkedIn",
+          "referral_bonus_eligible": false,
+          "submitted_by_vendor": null,
+          "interested_client": "CLI001",
+          "stages": {
+            "screening": {
+              "status": "COMPLETED",
+              "date": "2025-07-15",
+              "interviewer": "שרה כהן",
+              "score": 8.5,
+              "notes": "מועמד מתאים, ניסיון רלוונטי מצוין",
+              "duration_minutes": 30
+            },
+            "ראיון_ראשוני": {
+              "status": "COMPLETED",
+              "date": "2025-07-20",
+              "interviewer": "שרה כהן",
+              "score": 8.5,
+              "notes": "מועמד מעולה, תקשורת טובה, מוטיבציה גבוהה",
+              "duration_minutes": 45
+            },
+            "ראיון_טכני": {
+              "status": "SCHEDULED",
+              "scheduled_date": "2025-07-30T14:00:00Z",
+              "interviewer": "רמי דוד",
+              "interview_type": "coding_challenge",
+              "notes": "מוכן למטלה טכנית ברמה גבוהה"
+            },
+            "הצעת_עבודה": {
+              "status": "PENDING"
+            }
+          }
+        },
+        "documents": {
+          "cv_file": "cv_yossi_cohen.pdf",
+          "cover_letter": "cover_letter_yossi.pdf",
+          "portfolio": "https://yossi-portfolio.com",
+          "references": [
+            {
+              "name": "מנהל קודם - אבי רוזן",
+              "company": "חברת הטכנולוגיה ABC",
+              "phone": "050-9999999",
+              "email": "avi@abc-tech.com"
+            }
+          ]
+        },
+        "status": "ACTIVE",
+        "priority": "HIGH",
+        "notes": "מועמד חזק עם ניסיון במערכות enterprise, מתאים לתפקידים בכירים",
+        "created_date": "2025-07-10",
+        "last_updated": "2025-07-28"
+      },
+      {
+        "candidate_id": "CAN002",
+        "personal_info": {
+          "first_name": "מירי",
+          "last_name": "שמיר",
+          "full_name": "מירי שמיר",
+          "email": "miri.shamir@gmail.com",
+          "phone": "050-9876543",
+          "age": 32,
+          "city": "חיפה",
+          "address": "שדרות בן גוריון 45, חיפה",
+          "linkedin_profile": "https://linkedin.com/in/miri-shamir"
+        },
+        "professional_info": {
+          "desired_position": "מנהלת QA",
+          "experience_level": "בכירה (8+ שנים)",
+          "current_salary": 26000,
+          "desired_salary": 28000,
+          "availability": "חודש מראש",
+          "notice_period_days": 30,
+          "programming_languages": ["Java", "Python", "JavaScript"],
+          "frameworks": ["Selenium", "TestNG", "Cypress", "Jest"],
+          "tools": ["JIRA", "Jenkins", "Git", "Postman", "Docker"],
+          "certifications": ["ISTQB Advanced", "Agile Testing Certified"],
+          "languages": ["עברית (שפת אם)", "אנגלית (שוטף)"]
+        },
+        "recruitment_process": {
+          "current_stage": "הצעת_עבודה",
+          "application_date": "2025-07-01",
+          "source": "הפניה עובד",
+          "referral_bonus_eligible": true,
+          "referring_employee": "USR005",
+          "submitted_by_vendor": null,
+          "interested_client": "CLI001",
+          "stages": {
+            "screening": {
+              "status": "COMPLETED",
+              "date": "2025-07-05",
+              "interviewer": "שרה כהן",
+              "score": 9.0,
+              "notes": "ניסיון מעולה בQA וניהול צוותים",
+              "duration_minutes": 35
+            },
+            "ראיון_ראשוני": {
+              "status": "COMPLETED",
+              "date": "2025-07-12",
+              "interviewer": "שרה כהן",
+              "score": 9.0,
+              "notes": "מועמדת מצוינת עם יכולות ניהול מוכחות",
+              "duration_minutes": 60
+            },
+            "ראיון_טכני": {
+              "status": "COMPLETED",
+              "date": "2025-07-18",
+              "interviewer": "רמי דוד",
+              "score": 8.8,
+              "notes": "ידע מעמיק באוטומציה ומתודולוגיות בדיקה",
+              "duration_minutes": 90
+            },
+            "הצעת_עבודה": {
+              "status": "SENT",
+              "sent_date": "2025-07-25",
+              "offer_amount": 27000,
+              "expiry_date": "2025-08-01",
+              "benefits": ["ביטוח בריאות מורחב", "רכב חברה", "קרן השתלמות"],
+              "notes": "הצעה תחרותית, ממתינים לתשובה"
+            }
+          }
+        },
+        "documents": {
+          "cv_file": "cv_miri_shamir.pdf",
+          "cover_letter": null,
+          "portfolio": null,
+          "references": [
+            {
+              "name": "מנהל קודם - דני לוי",
+              "company": "חברת QA Pro",
+              "phone": "050-8888888",
+              "email": "dani@qapro.com"
+            }
+          ]
+        },
+        "status": "ACTIVE",
+        "priority": "HIGH",
+        "notes": "מועמדת מעולה עם יכולות ניהול, מתאימה לתפקידי ניהול QA",
+        "created_date": "2025-07-01",
+        "last_updated": "2025-07-28"
+      },
+      {
+        "candidate_id": "CAN003",
+        "personal_info": {
+          "first_name": "אבי",
+          "last_name": "רוזן",
+          "full_name": "אבי רוזן",
+          "email": "avi.rosen@gmail.com",
+          "phone": "050-5555555",
+          "age": 25,
+          "city": "ירושלים",
+          "address": "רחוב יפו 123, ירושלים",
+          "linkedin_profile": "https://linkedin.com/in/avi-rosen"
+        },
+        "professional_info": {
+          "desired_position": "מפתח Backend",
+          "experience_level": "זוטר (2-3 שנים)",
+          "current_salary": 15000,
+          "desired_salary": 18000,
+          "availability": "מיידית",
+          "notice_period_days": 0,
+          "programming_languages": ["Java", "Python", "SQL"],
+          "frameworks": ["Spring Boot", "Django"],
+          "tools": ["MySQL", "Docker", "Git"],
+          "certifications": [],
+          "languages": ["עברית (שפת אם)", "אנגלית (בינוני)"]
+        },
+        "recruitment_process": {
+          "current_stage": "נדחה",
+          "application_date": "2025-07-08",
+          "source": "ספק",
+          "referral_bonus_eligible": false,
+          "submitted_by_vendor": "VEN001",
+          "interested_client": null,
+          "stages": {
+            "screening": {
+              "status": "COMPLETED",
+              "date": "2025-07-08",
+              "interviewer": "שרה כהן",
+              "score": 6.0,
+              "notes": "ניסיון מוגבל, זקוק להכשרה נוספת",
+              "duration_minutes": 25
+            },
+            "ראיון_ראשוני": {
+              "status": "COMPLETED",
+              "date": "2025-07-14",
+              "interviewer": "שרה כהן",
+              "score": 6.0,
+              "notes": "חסר ניסיון בפרויקטים גדולים ומערכות מורכבות",
+              "duration_minutes": 30
+            },
+            "החלטה": {
+              "status": "REJECTED",
+              "date": "2025-07-16",
+              "reason": "לא מתאים לדרישות התפקיד הנוכחיות",
+              "feedback": "מועמד צעיר עם פוטנציאל, מתאים לתפקידים זוטרים יותר"
+            }
+          }
+        },
+        "documents": {
+          "cv_file": "cv_avi_rosen.pdf",
+          "cover_letter": null,
+          "portfolio": "https://github.com/avi-rosen",
+          "references": []
+        },
+        "status": "INACTIVE",
+        "priority": "LOW",
+        "notes": "מועמד צעיר עם פוטנציאל, אולי מתאים לתפקידים זוטרים יותר בעתיד",
+        "created_date": "2025-07-08",
+        "last_updated": "2025-07-16"
+      },
+      {
+        "candidate_id": "CAN004",
+        "personal_info": {
+          "first_name": "רינה",
+          "last_name": "לוי",
+          "full_name": "רינה לוי",
+          "email": "rina.levi@gmail.com",
+          "phone": "050-2468135",
+          "age": 29,
+          "city": "נתניה",
+          "address": "רחוב ויצמן 78, נתניה",
+          "linkedin_profile": "https://linkedin.com/in/rina-levi"
+        },
+        "professional_info": {
+          "desired_position": "מעצבת UX/UI",
+          "experience_level": "בכירה (6+ שנים)",
+          "current_salary": 20000,
+          "desired_salary": 23000,
+          "availability": "שבועיים מראש",
+          "notice_period_days": 14,
+          "programming_languages": ["HTML", "CSS", "JavaScript"],
+          "frameworks": ["React", "Vue.js"],
+          "tools": ["Figma", "Adobe XD", "Sketch", "Photoshop", "Illustrator"],
+          "certifications": ["Google UX Design Certificate"],
+          "languages": ["עברית (שפת אם)", "אנגלית (שוטף)", "צרפתית (בסיסי)"]
+        },
+        "recruitment_process": {
+          "current_stage": "ראיון_ראשוני",
+          "application_date": "2025-07-22",
+          "source": "אתר החברה",
+          "referral_bonus_eligible": false,
+          "submitted_by_vendor": null,
+          "interested_client": "CLI002",
+          "stages": {
+            "screening": {
+              "status": "COMPLETED",
+              "date": "2025-07-24",
+              "interviewer": "שרה כהן",
+              "score": 8.7,
+              "notes": "פורטפוליו מרשים, ניסיון רב בתחום UX",
+              "duration_minutes": 40
+            },
+            "ראיון_ראשוני": {
+              "status": "SCHEDULED",
+              "scheduled_date": "2025-07-30T10:00:00Z",
+              "interviewer": "שרה כהן",
+              "interview_type": "portfolio_review",
+              "notes": "לבדוק פרויקטים אחרונים ותהליך עבודה"
+            }
+          }
+        },
+        "documents": {
+          "cv_file": "cv_rina_levi.pdf",
+          "cover_letter": "cover_letter_rina.pdf",
+          "portfolio": "https://rina-design-portfolio.com",
+          "references": [
+            {
+              "name": "מנהלת עיצוב קודמת - שרית כהן",
+              "company": "סטודיו עיצוב מתקדם",
+              "phone": "050-7777777",
+              "email": "sarit@design-studio.com"
+            }
+          ]
+        },
+        "status": "ACTIVE",
+        "priority": "MEDIUM",
+        "notes": "מעצבת מוכשרת עם פורטפוליו חזק, מתאימה לפרויקטים יצירתיים",
+        "created_date": "2025-07-22",
+        "last_updated": "2025-07-28"
+      }
+    ],
+    "process_stages": {
+      "screening": {
+        "name": "סינוק ראשוני",
+        "description": "בדיקה ראשונית של קורות חיים והתאמה לתפקיד",
+        "duration_minutes": 30,
+        "required": true
+      },
+      "ראיון_ראשוני": {
+        "name": "ראיון ראשוני",
+        "description": "ראיון אישיות ומוטיבציה עם מגייס",
+        "duration_minutes": 45,
+        "required": true
+      },
+      "ראיון_טכני": {
+        "name": "ראיון טכני",
+        "description": "בדיקת יכולות טכניות ומטלות מעשיות",
+        "duration_minutes": 90,
+        "required": true
+      },
+      "מטלה_בית": {
+        "name": "מטלה בבית",
+        "description": "פרויקט קטן או מטלת תכנות",
+        "duration_minutes": 0,
+        "required": false
+      },
+      "ראיון_מנהל": {
+        "name": "ראיון עם מנהל",
+        "description": "ראיון סופי עם מנהל הצוות או לקוח",
+        "duration_minutes": 60,
+        "required": false
+      },
+      "הצעת_עבודה": {
+        "name": "הצעת עבודה",
+        "description": "שליחת הצעה רסמית למועמד",
+        "duration_minutes": 0,
+        "required": true
+      },
+      "קליטה": {
+        "name": "קליטה לעבודה",
+        "description": "תחילת עבודה וחניכה",
+        "duration_minutes": 0,
+        "required": true
+      },
+      "נדחה": {
+        "name": "נדחה",
+        "description": "המועמד לא התקבל לתפקיד",
+        "duration_minutes": 0,
+        "required": false
+      }
+    },
+    "application_sources": [
+      "LinkedIn",
+      "אתר החברה",
+      "הפניה עובד",
+      "ספק חיצוני",
+      "JobBoard",
+      "פייסבוק",
+      "אירוע רשת",
+      "אחר"
+    ],
+    "settings": {
+      "max_process_duration_days": 30,
+      "offer_expiry_days": 7,
+      "auto_notifications": true,
+      "referral_bonus_amount": 2000,
+      "require_references": true
+    }
+  }

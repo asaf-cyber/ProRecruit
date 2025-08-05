@@ -1,0 +1,397 @@
+{
+    "metadata": {
+      "version": "1.0",
+      "created": "2025-07-28",
+      "last_updated": "2025-07-28",
+      "total_clients": 3,
+      "active_clients": 2
+    },
+    "clients": [
+      {
+        "client_id": "CLI001",
+        "company_info": {
+          "company_name": "HiTech Jerusalem Ltd",
+          "business_number": "515888999",
+          "vat_number": "888999777",
+          "established_year": 2015,
+          "company_size": "100-200 עובדים",
+          "industry": "פיתוח תוכנה",
+          "website": "https://hitechjerusalem.com",
+          "description": "חברת פיתוח מתקדמת המתמחה במערכות enterprise ופתרונות cloud"
+        },
+        "contact_info": {
+          "primary_contact": {
+            "name": "דני לוי",
+            "title": "מנהל משאבי אנוש",
+            "email": "dani.levi@hitechjerusalem.com",
+            "phone": "02-7777777",
+            "mobile": "050-8888888"
+          },
+          "secondary_contact": {
+            "name": "רחל כהן",
+            "title": "מנהלת גיוס",
+            "email": "rachel@hitechjerusalem.com",
+            "phone": "02-7777778",
+            "mobile": "050-7777777"
+          },
+          "billing_contact": {
+            "name": "יוסי מזרחי",
+            "title": "מנהל כספים",
+            "email": "yossi@hitechjerusalem.com",
+            "phone": "02-7777779"
+          },
+          "address": {
+            "street": "רחוב יפו 156",
+            "city": "ירושלים",
+            "postal_code": "9434312",
+            "country": "ישראל"
+          }
+        },
+        "business_requirements": {
+          "preferred_technologies": [
+            "Java",
+            "Spring Boot",
+            "React",
+            "AWS",
+            "Kubernetes",
+            "Microservices"
+          ],
+          "required_seniority_levels": [
+            "Mid-level",
+            "Senior",
+            "Lead"
+          ],
+          "contract_types": [
+            "קבוע",
+            "זמני לטווח ארוך"
+          ],
+          "salary_ranges": {
+            "mid_level": "18000-22000",
+            "senior": "25000-30000",
+            "lead": "32000-40000"
+          },
+          "work_model": "היברידי - 3 ימים במשרד",
+          "languages_required": ["עברית", "אנגלית"]
+        },
+        "active_positions": [
+          {
+            "position_id": "POS001",
+            "title": "מפתח Full Stack Senior",
+            "department": "פיתוח",
+            "urgency": "גבוהה",
+            "opened_date": "2025-07-01",
+            "expected_start_date": "2025-08-15",
+            "salary_range": "25000-28000",
+            "status": "ACTIVE",
+            "candidates_submitted": 8,
+            "candidates_interviewed": 3,
+            "offers_made": 1
+          },
+          {
+            "position_id": "POS002",
+            "title": "מנהל QA",
+            "department": "איכות",
+            "urgency": "בינונית",
+            "opened_date": "2025-07-10",
+            "expected_start_date": "2025-09-01",
+            "salary_range": "26000-30000",
+            "status": "ACTIVE",
+            "candidates_submitted": 5,
+            "candidates_interviewed": 2,
+            "offers_made": 1
+          }
+        ],
+        "contract_terms": {
+          "payment_terms": 30,
+          "commission_structure": {
+            "junior": 18,
+            "mid_level": 20,
+            "senior": 22,
+            "lead": 25
+          },
+          "guarantee_period_days": 90,
+          "volume_discounts": [
+            {
+              "min_hires_per_year": 10,
+              "discount_percentage": 5
+            },
+            {
+              "min_hires_per_year": 20,
+              "discount_percentage": 10
+            }
+          ],
+          "exclusive_positions": false,
+          "preferred_vendor": false
+        },
+        "financial_info": {
+          "total_fees_paid": 285000,
+          "outstanding_invoices": 45000,
+          "average_hire_cost": 24000,
+          "total_hires": 12,
+          "payment_history": "תשלומים בזמן",
+          "credit_limit": 100000,
+          "billing_cycle": "monthly"
+        },
+        "relationship_history": {
+          "client_since": "2024-11-01",
+          "satisfaction_rating": 4.5,
+          "successful_placements": 11,
+          "failed_placements": 1,
+          "retention_rate": 91.7,
+          "average_time_to_hire": 21,
+          "preferred_communication": "email_and_calls"
+        },
+        "status": "ACTIVE",
+        "priority": "HIGH",
+        "notes": "לקוח מצוין עם צרכים קבועים ותשלומים מהירים. מעוניין בהרחבת הצוות ב-2025",
+        "created_date": "2024-11-01",
+        "last_updated": "2025-07-28"
+      },
+      {
+        "client_id": "CLI002",
+        "company_info": {
+          "company_name": "StartupNation Ventures",
+          "business_number": "515555666",
+          "vat_number": "555666444",
+          "established_year": 2020,
+          "company_size": "20-50 עובדים",
+          "industry": "פינטק",
+          "website": "https://startupnation.co.il",
+          "description": "סטארטאפ בתחום הפינטק המפתח פתרונות תשלומים חדשניים"
+        },
+        "contact_info": {
+          "primary_contact": {
+            "name": "מיכל אברהם",
+            "title": "VP People & Culture",
+            "email": "michal@startupnation.co.il",
+            "phone": "03-4444444",
+            "mobile": "050-6666666"
+          },
+          "secondary_contact": {
+            "name": "אור שמיר",
+            "title": "CTO",
+            "email": "or@startupnation.co.il",
+            "phone": "03-4444445",
+            "mobile": "050-5555555"
+          },
+          "address": {
+            "street": "רחוב רוטשילד 1",
+            "city": "תל אביב",
+            "postal_code": "6688102",
+            "country": "ישראל"
+          }
+        },
+        "business_requirements": {
+          "preferred_technologies": [
+            "Node.js",
+            "React",
+            "Python",
+            "PostgreSQL",
+            "Docker",
+            "AWS"
+          ],
+          "required_seniority_levels": [
+            "Junior",
+            "Mid-level",
+            "Senior"
+          ],
+          "contract_types": [
+            "קבוע",
+            "equity-based"
+          ],
+          "salary_ranges": {
+            "junior": "15000-18000",
+            "mid_level": "19000-23000",
+            "senior": "24000-28000"
+          },
+          "work_model": "מרוחק/היברידי",
+          "languages_required": ["עברית", "אנגלית"]
+        },
+        "active_positions": [
+          {
+            "position_id": "POS003",
+            "title": "UX/UI Designer",
+            "department": "עיצוב",
+            "urgency": "בינונית",
+            "opened_date": "2025-07-22",
+            "expected_start_date": "2025-08-30",
+            "salary_range": "20000-24000",
+            "status": "ACTIVE",
+            "candidates_submitted": 3,
+            "candidates_interviewed": 1,
+            "offers_made": 0
+          }
+        ],
+        "contract_terms": {
+          "payment_terms": 15,
+          "commission_structure": {
+            "junior": 15,
+            "mid_level": 17,
+            "senior": 20
+          },
+          "guarantee_period_days": 60,
+          "volume_discounts": [],
+          "exclusive_positions": true,
+          "preferred_vendor": true
+        },
+        "financial_info": {
+          "total_fees_paid": 68000,
+          "outstanding_invoices": 0,
+          "average_hire_cost": 17000,
+          "total_hires": 4,
+          "payment_history": "תשלומים מהירים",
+          "credit_limit": 50000,
+          "billing_cycle": "per_hire"
+        },
+        "relationship_history": {
+          "client_since": "2025-03-01",
+          "satisfaction_rating": 4.8,
+          "successful_placements": 4,
+          "failed_placements": 0,
+          "retention_rate": 100,
+          "average_time_to_hire": 14,
+          "preferred_communication": "slack_and_email"
+        },
+        "status": "ACTIVE",
+        "priority": "MEDIUM",
+        "notes": "לקוח חדש עם פוטנציאל גדול. מחפש צוות צעיר ומוכשר לגדילה מהירה",
+        "created_date": "2025-03-01",
+        "last_updated": "2025-07-28"
+      },
+      {
+        "client_id": "CLI003",
+        "company_info": {
+          "company_name": "Enterprise Solutions Corp",
+          "business_number": "515222333",
+          "vat_number": "222333111",
+          "established_year": 2010,
+          "company_size": "500+ עובדים",
+          "industry": "שירותי IT ויעוץ",
+          "website": "https://enterprise-sol.com",
+          "description": "חברה גדולה לפתרונות enterprise ויישום מערכות מידע"
+        },
+        "contact_info": {
+          "primary_contact": {
+            "name": "שלמה דוד",
+            "title": "מנהל גיוס ארצי",
+            "email": "shlomo@enterprise-sol.com",
+            "phone": "04-9999999",
+            "mobile": "050-3333333"
+          },
+          "address": {
+            "street": "פארק תעשיות צפון",
+            "city": "חיפה",
+            "postal_code": "3200003",
+            "country": "ישראל"
+          }
+        },
+        "business_requirements": {
+          "preferred_technologies": [
+            "Java",
+            ".NET",
+            "Oracle",
+            "SAP",
+            "Enterprise Architecture"
+          ],
+          "required_seniority_levels": [
+            "Senior",
+            "Lead",
+            "Architect"
+          ],
+          "contract_types": [
+            "קבוע",
+            "פרויקט"
+          ],
+          "salary_ranges": {
+            "senior": "28000-35000",
+            "lead": "35000-45000",
+            "architect": "45000-60000"
+          },
+          "work_model": "משרד מלא",
+          "languages_required": ["עברית", "אנגלית"]
+        },
+        "active_positions": [],
+        "contract_terms": {
+          "payment_terms": 60,
+          "commission_structure": {
+            "senior": 25,
+            "lead": 28,
+            "architect": 30
+          },
+          "guarantee_period_days": 120,
+          "volume_discounts": [],
+          "exclusive_positions": false,
+          "preferred_vendor": false
+        },
+        "financial_info": {
+          "total_fees_paid": 150000,
+          "outstanding_invoices": 75000,
+          "average_hire_cost": 35000,
+          "total_hires": 5,
+          "payment_history": "עיכובים קבועים",
+          "credit_limit": 80000,
+          "billing_cycle": "quarterly"
+        },
+        "relationship_history": {
+          "client_since": "2024-05-01",
+          "satisfaction_rating": 3.2,
+          "successful_placements": 4,
+          "failed_placements": 1,
+          "retention_rate": 80,
+          "average_time_to_hire": 45,
+          "preferred_communication": "formal_emails"
+        },
+        "status": "INACTIVE",
+        "priority": "LOW",
+        "notes": "לקוח עם עיכובים בתשלומים ודרישות גבוהות. בהקפאה עד לסדר התשלומים",
+        "created_date": "2024-05-01",
+        "last_updated": "2025-07-28"
+      }
+    ],
+    "position_categories": {
+      "DEVELOPMENT": {
+        "name": "פיתוח",
+        "common_titles": ["מפתח Full Stack", "Frontend Developer", "Backend Developer", "Mobile Developer"]
+      },
+      "QA": {
+        "name": "איכות",
+        "common_titles": ["מהנדס QA", "אוטומטית QA", "מנהל QA"]
+      },
+      "DEVOPS": {
+        "name": "DevOps",
+        "common_titles": ["מהנדס DevOps", "Site Reliability Engineer", "Cloud Engineer"]
+      },
+      "MANAGEMENT": {
+        "name": "ניהול",
+        "common_titles": ["Team Lead", "Tech Lead", "VP R&D", "CTO"]
+      },
+      "DESIGN": {
+        "name": "עיצוב",
+        "common_titles": ["UX Designer", "UI Designer", "Product Designer"]
+      }
+    },
+    "industry_standards": {
+      "commission_rates": {
+        "startup": "15-20%",
+        "mid_size": "18-25%",
+        "enterprise": "20-30%"
+      },
+      "guarantee_periods": {
+        "standard": 90,
+        "premium": 120,
+        "enterprise": 180
+      },
+      "payment_terms": {
+        "fast": 15,
+        "standard": 30,
+        "slow": 60
+      }
+    },
+    "settings": {
+      "auto_position_alerts": true,
+      "candidate_submission_limit": 5,
+      "client_satisfaction_survey": true,
+      "retention_tracking_months": 12,
+      "performance_review_frequency": "monthly"
+    }
+  }
