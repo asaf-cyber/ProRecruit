@@ -61,18 +61,16 @@ export function Sidebar({ isMobile = false, isOpen = false, onClose, collapsed: 
     { name: 'דשבורד ראשי', href: '/', icon: LayoutDashboard, description: 'מבט כללי על המערכת' },
     { name: 'דשבורד מנהלים', href: '/executive-dashboard', icon: BarChart3, description: 'נתונים וניתוחים מתקדמים' },
     { name: 'משרות', href: '/jobs', icon: Briefcase, description: 'ניהול דרישות משרות' },
-    { name: 'מאגר מועמדים', href: '/cv-database', icon: FileSearch, description: 'מאגר קורות חיים' },
     { name: 'מועמדים', href: '/candidates', icon: Users, description: 'ניהול מועמדים' },
+    { name: 'עובדים', href: '/employees', icon: UserCheck, description: 'ניהול עובדים' },
     { name: 'לקוחות והזמנות', href: '/clients', icon: Building2, description: 'ניהול לקוחות והזמנות' },
     { name: 'ספקים', href: '/vendors', icon: Truck, description: 'ניהול ספקים' },
-    { name: 'חוזים ועובדים', href: '/contracts', icon: FileText, description: 'ניהול חוזים ועובדים' },
   ];
 
   const specializedModules = [
     { name: 'תהליך סיווג ביטחוני', href: '/clearances', icon: Shield, description: 'ניהול תהליכי סיווג' },
-    { name: 'ניהול ידע ופיתוח', href: '/knowledge-management', icon: Lightbulb, description: 'מרכז ידע ופיתוח' },
-    { name: 'עובדים', href: '/employees', icon: UserCheck, description: 'ניהול עובדים' },
-    { name: 'חבר מביא חבר', href: '/referrals', icon: UserPlus, description: 'תוכנית הפניות' },
+    { name: 'שימור ופיתוח עובדים', href: '/retention', icon: Lightbulb, description: 'תוכניות שימור ופיתוח' },
+    { name: 'הגדרות מערכת', href: '/settings', icon: Settings, description: 'הגדרות והרשאות' },
   ];
 
   const portals = [
@@ -255,24 +253,6 @@ export function Sidebar({ isMobile = false, isOpen = false, onClose, collapsed: 
           {renderNavigationItems(portals, 'portals')}
         </div>
 
-        {/* Settings */}
-        {!collapsed && (
-          <div className="p-4 border-t border-gray-200 dark:border-gray-700">
-            <Link
-              href="/settings"
-              className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-200 group ${
-                pathname === '/settings'
-                  ? 'bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white'
-                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
-              }`}
-            >
-              <div className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 group-hover:bg-gray-200 dark:group-hover:bg-gray-700">
-                <Settings size={20} />
-              </div>
-              <span className="font-medium text-sm">הגדרות</span>
-            </Link>
-          </div>
-        )}
 
         {/* User Profile */}
         <div className="p-4 border-t border-gray-200 dark:border-gray-700">
