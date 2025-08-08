@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { Sidebar } from './sidebar';
+import { LeftSidebar } from './left-sidebar';
 import { Header } from './header';
-import { CommunicationSidebar } from './communication-sidebar';
 import { NotificationBar } from './notification-bar';
 import { Menu } from 'lucide-react';
 import { useResponsive } from '@/hooks/use-responsive';
@@ -123,10 +123,10 @@ export function MainLayout({ children }: MainLayoutProps) {
         />
       )}
       
-      {/* Desktop Communication Sidebar */}
+      {/* Desktop Left Sidebar */}
       {!isMobile && (
-        <div className={`fixed inset-y-0 left-0 z-50 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 transition-all duration-300 ${commSidebarWidth}`}>
-          <CommunicationSidebar 
+        <div className={`fixed inset-y-0 left-0 z-50 transition-all duration-300 ${commSidebarWidth}`}>
+          <LeftSidebar 
             isMobile={false}
             isOpen={true}
             onClose={() => {}}
@@ -135,9 +135,9 @@ export function MainLayout({ children }: MainLayoutProps) {
         </div>
       )}
       
-      {/* Mobile Communication Sidebar */}
+      {/* Mobile Left Sidebar */}
       {isMobile && (
-        <CommunicationSidebar 
+        <LeftSidebar 
           isMobile={true}
           isOpen={mobileCommSidebarOpen}
           onClose={() => setMobileCommSidebarOpen(false)}

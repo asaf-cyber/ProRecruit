@@ -9,23 +9,19 @@ import {
   Users, 
   Shield, 
   Building2, 
-  ShoppingCart, 
-  FileText, 
-  UserCheck, 
-  UserPlus,
   Settings,
   Menu,
   X,
   Globe,
   ChevronDown,
   Truck,
-  ExternalLink,
-  BarChart3,
-  FileSearch,
-  Lightbulb,
   LogOut,
   User,
-  ChevronRight
+  ChevronRight,
+  UserCheck,
+  Calendar,
+  FileText,
+  Building
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -39,7 +35,6 @@ export function Sidebar({ isMobile = false, isOpen = false, onClose, collapsed: 
   const [internalCollapsed, setInternalCollapsed] = useState(false);
   const collapsed = isMobile ? false : (externalCollapsed ?? internalCollapsed);
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
-  const [expandedSections, setExpandedSections] = useState<string[]>(['core']);
   const pathname = usePathname();
 
   // Close mobile sidebar when clicking outside
@@ -59,25 +54,17 @@ export function Sidebar({ isMobile = false, isOpen = false, onClose, collapsed: 
 
   const coreNavigation = [
     { name: 'דשבורד ראשי', href: '/', icon: LayoutDashboard, description: 'מבט כללי על המערכת' },
-    { name: 'דשבורד מנהלים', href: '/executive-dashboard', icon: BarChart3, description: 'נתונים וניתוחים מתקדמים' },
+    { name: 'דשבורד מנהלים', href: '/executive-dashboard', icon: LayoutDashboard, description: 'נתונים מתקדמים למנהלים' },
     { name: 'משרות', href: '/jobs', icon: Briefcase, description: 'ניהול דרישות משרות' },
     { name: 'מועמדים', href: '/candidates', icon: Users, description: 'ניהול מועמדים' },
     { name: 'עובדים', href: '/employees', icon: UserCheck, description: 'ניהול עובדים' },
-    { name: 'לקוחות והזמנות', href: '/clients', icon: Building2, description: 'ניהול לקוחות והזמנות' },
+    { name: 'לקוחות והזמנות', href: '/clients', icon: Building, description: 'ניהול לקוחות והזמנות' },
     { name: 'ספקים', href: '/vendors', icon: Truck, description: 'ניהול ספקים' },
-  ];
-
-  const specializedModules = [
     { name: 'תהליך סיווג ביטחוני', href: '/clearances', icon: Shield, description: 'ניהול תהליכי סיווג' },
-    { name: 'שימור ופיתוח עובדים', href: '/retention', icon: Lightbulb, description: 'תוכניות שימור ופיתוח' },
+    { name: 'שימור ופיתוח עובדים', href: '/retention', icon: Users, description: 'תוכניות שימור ופיתוח' },
     { name: 'הגדרות מערכת', href: '/settings', icon: Settings, description: 'הגדרות והרשאות' },
   ];
 
-  const portals = [
-    { name: 'פורטל ספק', href: '/vendor-portal', icon: ExternalLink, description: 'גישה לספקים' },
-    { name: 'פורטל לקוח', href: '/client-portal', icon: Building2, description: 'גישה ללקוחות' },
-    { name: 'פורטל מועמד', href: '/candidate-portal', icon: User, description: 'גישה למועמדים' },
-  ];
 
   const languages = [
     { code: 'he', name: 'עברית', flag: '🇮🇱' },
@@ -85,71 +72,6 @@ export function Sidebar({ isMobile = false, isOpen = false, onClose, collapsed: 
     { code: 'ru', name: 'Русский', flag: '🇷🇺' },
   ];
 
-  const toggleSection = (section: string) => {
-    setExpandedSections(prev => 
-      prev.includes(section) 
-        ? prev.filter(s => s !== section)
-        : [...prev, section]
-    );
-  };
-
-  const renderNavigationItems = (items: any[], section: string) => {
-    const isExpanded = expandedSections.includes(section);
-    
-    return (
-      <div className="space-y-1">
-        {!collapsed && (
-          <button
-            onClick={() => toggleSection(section)}
-            className="w-full flex items-center justify-between p-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-          >
-            <span>{section === 'core' ? 'מסכי ליבה' : section === 'specialized' ? 'מודולים ייעודיים' : 'פורטלים'}</span>
-            <ChevronRight 
-              size={12} 
-              className={`transition-transform ${isExpanded ? 'rotate-90' : ''}`}
-            />
-          </button>
-        )}
-        
-        <div className={`space-y-1 ${!collapsed && !isExpanded ? 'hidden' : ''}`}>
-          {items.map((item) => {
-            const isActive = pathname === item.href || pathname.startsWith(item.href);
-            const Icon = item.icon;
-            
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={isMobile ? onClose : undefined}
-                className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-200 group ${
-                  isActive
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
-                }`}
-                title={collapsed ? item.name : undefined}
-              >
-                <div className={`p-2 rounded-lg ${
-                  isActive 
-                    ? 'bg-white/20' 
-                    : 'bg-gray-100 dark:bg-gray-700 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20'
-                }`}>
-                  <Icon size={20} />
-                </div>
-                {!collapsed && (
-                  <div className="flex-1 min-w-0">
-                    <span className="font-medium text-sm">{item.name}</span>
-                    {item.description && (
-                      <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{item.description}</p>
-                    )}
-                  </div>
-                )}
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-    );
-  };
 
   const sidebarClasses = `
     h-full bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-700 transition-all duration-300 ease-in-out
@@ -247,10 +169,43 @@ export function Sidebar({ isMobile = false, isOpen = false, onClose, collapsed: 
         )}
 
         {/* Navigation */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
-          {renderNavigationItems(coreNavigation, 'core')}
-          {renderNavigationItems(specializedModules, 'specialized')}
-          {renderNavigationItems(portals, 'portals')}
+        <div className="flex-1 overflow-y-auto p-4">
+          <div className="space-y-1">
+            {coreNavigation.map((item) => {
+              const isActive = pathname === item.href || pathname.startsWith(item.href);
+              const Icon = item.icon;
+              
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={isMobile ? onClose : undefined}
+                  className={`flex items-center gap-3 p-3 rounded-lg transition-all duration-200 group ${
+                    isActive
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
+                  }`}
+                  title={collapsed ? item.name : undefined}
+                >
+                  <div className={`p-2 rounded-lg ${
+                    isActive 
+                      ? 'bg-white/20' 
+                      : 'bg-gray-100 dark:bg-gray-700 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20'
+                  }`}>
+                    <Icon size={20} />
+                  </div>
+                  {!collapsed && (
+                    <div className="flex-1 min-w-0">
+                      <span className="font-medium text-sm">{item.name}</span>
+                      {item.description && (
+                        <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{item.description}</p>
+                      )}
+                    </div>
+                  )}
+                </Link>
+              );
+            })}
+          </div>
         </div>
 
 
