@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { Sidebar } from './sidebar';
+import { LeftSidebar } from './left-sidebar';
 import { Header } from './header';
-import { CommunicationSidebar } from './communication-sidebar';
 import { NotificationBar } from './notification-bar';
 import { Menu } from 'lucide-react';
 import { useResponsive } from '@/hooks/use-responsive';
@@ -14,21 +14,29 @@ interface MainLayoutProps {
 
 export function MainLayout({ children }: MainLayoutProps) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(true); // Default collapsed
+  const [commSidebarCollapsed, setCommSidebarCollapsed] = useState(true); // Communication sidebar collapsed by default
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [mobileCommSidebarOpen, setMobileCommSidebarOpen] = useState(false);
   const { isMobile, isTablet } = useResponsive();
 
-  // Close mobile sidebar when switching to desktop
+  // Close mobile sidebars when switching to desktop
   useEffect(() => {
     if (!isMobile) {
       setMobileSidebarOpen(false);
+      setMobileCommSidebarOpen(false);
     }
   }, [isMobile]);
 
-  // Load sidebar state from localStorage
+  // Load sidebar states from localStorage
   useEffect(() => {
-    const savedState = localStorage.getItem('sidebarCollapsed');
-    if (savedState !== null) {
-      setSidebarCollapsed(JSON.parse(savedState));
+    const savedMainSidebarState = localStorage.getItem('sidebarCollapsed');
+    if (savedMainSidebarState !== null) {
+      setSidebarCollapsed(JSON.parse(savedMainSidebarState));
+    }
+
+    const savedCommSidebarState = localStorage.getItem('commSidebarCollapsed');
+    if (savedCommSidebarState !== null) {
+      setCommSidebarCollapsed(JSON.parse(savedCommSidebarState));
     }
   }, []);
 
@@ -38,8 +46,17 @@ export function MainLayout({ children }: MainLayoutProps) {
     localStorage.setItem('sidebarCollapsed', JSON.stringify(newState));
   };
 
+  const toggleCommSidebar = () => {
+    const newState = !commSidebarCollapsed;
+    setCommSidebarCollapsed(newState);
+    localStorage.setItem('commSidebarCollapsed', JSON.stringify(newState));
+  };
+
   const sidebarWidth = sidebarCollapsed ? 'w-16' : 'w-80';
-  const contentMargin = sidebarCollapsed ? 'mr-16' : 'mr-80';
+  const commSidebarWidth = commSidebarCollapsed ? 'w-16' : 'w-80';
+  const rightMargin = sidebarCollapsed ? 'mr-16' : 'mr-80';
+  const leftMargin = commSidebarCollapsed ? 'ml-16' : 'ml-80';
+  const contentMargin = isMobile ? '' : `${rightMargin} ${leftMargin}`;
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300" dir="rtl">
@@ -64,12 +81,22 @@ export function MainLayout({ children }: MainLayoutProps) {
                 <p className="text-xs text-gray-500 dark:text-gray-400">IT Experts</p>
               </div>
             </div>
-            <button
-              onClick={() => setMobileSidebarOpen(true)}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors"
-            >
-              <Menu size={24} />
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setMobileCommSidebarOpen(true)}
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-blue-600 dark:text-blue-400 transition-colors"
+                title="פתח תפעול שוטף"
+              >
+                <Menu size={20} />
+              </button>
+              <button
+                onClick={() => setMobileSidebarOpen(true)}
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors"
+                title="תפריט ראשי"
+              >
+                <Menu size={24} />
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -96,8 +123,27 @@ export function MainLayout({ children }: MainLayoutProps) {
         />
       )}
       
-      {/* Communication Sidebar */}
-      <CommunicationSidebar />
+      {/* Desktop Left Sidebar */}
+      {!isMobile && (
+        <div className={`fixed inset-y-0 left-0 z-50 transition-all duration-300 ${commSidebarWidth}`}>
+          <LeftSidebar 
+            isMobile={false}
+            isOpen={true}
+            onClose={() => {}}
+            collapsed={commSidebarCollapsed}
+          />
+        </div>
+      )}
+      
+      {/* Mobile Left Sidebar */}
+      {isMobile && (
+        <LeftSidebar 
+          isMobile={true}
+          isOpen={mobileCommSidebarOpen}
+          onClose={() => setMobileCommSidebarOpen(false)}
+          collapsed={false}
+        />
+      )}
       
       {/* Main Content */}
       <div className={`transition-all duration-300 ${isMobile ? 'pt-20' : contentMargin}`}>

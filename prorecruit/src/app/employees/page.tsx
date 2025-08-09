@@ -11,14 +11,63 @@ import { EmployeeCardsGrid } from '@/components/employees/employee-cards-grid';
 interface Employee {
   id: string;
   name: string;
+  email: string;
+  phone: string;
   role: string;
   department: string;
   manager: string;
   hireDate: string;
   avatar: string;
-  status: 'active' | 'inactive' | 'on_leave';
+  status: 'active' | 'inactive' | 'on_leave' | 'probation';
   riskLevel: 'low' | 'medium' | 'high';
   performanceScore: number;
+  salary: number;
+  location: string;
+  skills: string[];
+  certifications: string[];
+  projects: Array<{
+    id: string;
+    name: string;
+    status: 'active' | 'completed' | 'paused';
+    progress: number;
+  }>;
+  personalDetails: {
+    birthDate: string;
+    emergencyContact: {
+      name: string;
+      phone: string;
+      relationship: string;
+    };
+    address: string;
+  };
+  contract: {
+    type: 'permanent' | 'contract' | 'intern';
+    startDate: string;
+    endDate?: string;
+    workHours: number;
+  };
+  benefits: {
+    healthInsurance: boolean;
+    pensionPlan: boolean;
+    carAllowance: boolean;
+    phoneAllowance: boolean;
+    educationBudget: number;
+  };
+  documents: Array<{
+    id: string;
+    name: string;
+    type: 'contract' | 'id' | 'certificate' | 'other';
+    uploadDate: string;
+    url: string;
+  }>;
+  timeline: Array<{
+    id: string;
+    type: 'hired' | 'promotion' | 'performance_review' | 'project_assignment' | 'training';
+    title: string;
+    description: string;
+    date: string;
+    author: string;
+  }>;
 }
 
 export default function EmployeesPage() {
@@ -31,11 +80,13 @@ export default function EmployeesPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Mock data - בפועל זה יגיע מה-API
+    // Mock data מורחב - בפועל זה יגיע מה-API
     const mockEmployees: Employee[] = [
       {
         id: '1',
         name: 'דוד לוי',
+        email: 'david.levy@company.com',
+        phone: '+972-50-123-4567',
         role: 'מפתח Full Stack',
         department: 'פיתוח',
         manager: 'שרה כהן',
@@ -43,11 +94,56 @@ export default function EmployeesPage() {
         avatar: '/api/placeholder/40/40',
         status: 'active',
         riskLevel: 'low',
-        performanceScore: 92
+        performanceScore: 92,
+        salary: 25000,
+        location: 'תל אביב',
+        skills: ['React', 'Node.js', 'TypeScript', 'MongoDB'],
+        certifications: ['AWS Certified Developer', 'Scrum Master'],
+        projects: [
+          { id: 'p1', name: 'מערכת CRM חדשה', status: 'active', progress: 75 },
+          { id: 'p2', name: 'אתר לקוחות', status: 'completed', progress: 100 }
+        ],
+        personalDetails: {
+          birthDate: '1990-05-15',
+          emergencyContact: {
+            name: 'רחל לוי',
+            phone: '+972-50-999-8888',
+            relationship: 'בן/בת זוג'
+          },
+          address: 'תל אביב, רחוב הרצל 15'
+        },
+        contract: {
+          type: 'permanent',
+          startDate: '2023-01-15',
+          workHours: 42
+        },
+        benefits: {
+          healthInsurance: true,
+          pensionPlan: true,
+          carAllowance: true,
+          phoneAllowance: true,
+          educationBudget: 5000
+        },
+        documents: [
+          { id: 'd1', name: 'חוזה עבודה', type: 'contract', uploadDate: '2023-01-10', url: '/documents/contract1.pdf' },
+          { id: 'd2', name: 'תעודת זהות', type: 'id', uploadDate: '2023-01-10', url: '/documents/id1.pdf' }
+        ],
+        timeline: [
+          {
+            id: 't1',
+            type: 'hired',
+            title: 'נשכר לחברה',
+            description: 'הצטרף כמפתח Full Stack בצוות הפיתוח',
+            date: '2023-01-15',
+            author: 'מערכת משאבי אנוש'
+          }
+        ]
       },
       {
         id: '2',
         name: 'מיכל רוזן',
+        email: 'michal.rosen@company.com',
+        phone: '+972-52-987-6543',
         role: 'מעצבת UX/UI',
         department: 'עיצוב',
         manager: 'יוסי כהן',
@@ -55,11 +151,54 @@ export default function EmployeesPage() {
         avatar: '/api/placeholder/40/40',
         status: 'active',
         riskLevel: 'medium',
-        performanceScore: 88
+        performanceScore: 88,
+        salary: 22000,
+        location: 'חיפה',
+        skills: ['Figma', 'Adobe XD', 'Sketch', 'Prototyping'],
+        certifications: ['Google UX Design Certificate', 'Adobe Certified Expert'],
+        projects: [
+          { id: 'p3', name: 'ממשק משתמש חדש', status: 'active', progress: 60 }
+        ],
+        personalDetails: {
+          birthDate: '1988-11-22',
+          emergencyContact: {
+            name: 'אביגיל רוזן',
+            phone: '+972-54-777-6666',
+            relationship: 'אחות'
+          },
+          address: 'חיפה, שדרות בן גוריון 32'
+        },
+        contract: {
+          type: 'permanent',
+          startDate: '2023-03-20',
+          workHours: 40
+        },
+        benefits: {
+          healthInsurance: true,
+          pensionPlan: true,
+          carAllowance: false,
+          phoneAllowance: true,
+          educationBudget: 4000
+        },
+        documents: [
+          { id: 'd3', name: 'חוזה עבודה', type: 'contract', uploadDate: '2023-03-15', url: '/documents/contract2.pdf' }
+        ],
+        timeline: [
+          {
+            id: 't2',
+            type: 'hired',
+            title: 'נשכרה לחברה',
+            description: 'הצטרפה כמעצבת UX/UI בצוות העיצוב',
+            date: '2023-03-20',
+            author: 'מערכת משאבי אנוש'
+          }
+        ]
       },
       {
         id: '3',
         name: 'יוסי כהן',
+        email: 'yossi.cohen@company.com',
+        phone: '+972-54-456-7890',
         role: 'מנהל פרויקטים',
         department: 'ניהול',
         manager: 'דוד לוי',
@@ -67,43 +206,58 @@ export default function EmployeesPage() {
         avatar: '/api/placeholder/40/40',
         status: 'active',
         riskLevel: 'low',
-        performanceScore: 95
-      },
-      {
-        id: '4',
-        name: 'שרה כהן',
-        role: 'אנליסט נתונים',
-        department: 'נתונים',
-        manager: 'מיכל רוזן',
-        hireDate: '2023-06-05',
-        avatar: '/api/placeholder/40/40',
-        status: 'on_leave',
-        riskLevel: 'high',
-        performanceScore: 75
-      },
-      {
-        id: '5',
-        name: 'אבי ישראלי',
-        role: 'מפתח Backend',
-        department: 'פיתוח',
-        manager: 'דוד לוי',
-        hireDate: '2023-02-28',
-        avatar: '/api/placeholder/40/40',
-        status: 'active',
-        riskLevel: 'low',
-        performanceScore: 90
-      },
-      {
-        id: '6',
-        name: 'רחל גולדברג',
-        role: 'מנהלת משאבי אנוש',
-        department: 'משאבי אנוש',
-        manager: 'יוסי כהן',
-        hireDate: '2022-09-01',
-        avatar: '/api/placeholder/40/40',
-        status: 'active',
-        riskLevel: 'low',
-        performanceScore: 93
+        performanceScore: 95,
+        salary: 32000,
+        location: 'ירושלים',
+        skills: ['Project Management', 'Agile', 'Scrum', 'Leadership'],
+        certifications: ['PMP Certified', 'Agile Certified Practitioner'],
+        projects: [
+          { id: 'p4', name: 'טרנספורמציה דיגיטלית', status: 'active', progress: 45 },
+          { id: 'p5', name: 'מיגרציה לענן', status: 'completed', progress: 100 }
+        ],
+        personalDetails: {
+          birthDate: '1985-08-03',
+          emergencyContact: {
+            name: 'דינה כהן',
+            phone: '+972-50-555-4444',
+            relationship: 'בן/בת זוג'
+          },
+          address: 'ירושלים, רחוב יפו 45'
+        },
+        contract: {
+          type: 'permanent',
+          startDate: '2022-11-10',
+          workHours: 45
+        },
+        benefits: {
+          healthInsurance: true,
+          pensionPlan: true,
+          carAllowance: true,
+          phoneAllowance: true,
+          educationBudget: 8000
+        },
+        documents: [
+          { id: 'd4', name: 'חוזה עבודה', type: 'contract', uploadDate: '2022-11-05', url: '/documents/contract3.pdf' },
+          { id: 'd5', name: 'תעודת PMP', type: 'certificate', uploadDate: '2022-11-05', url: '/documents/pmp.pdf' }
+        ],
+        timeline: [
+          {
+            id: 't3',
+            type: 'hired',
+            title: 'נשכר לחברה',
+            description: 'הצטרף כמנהל פרויקטים בצוות הניהול',
+            date: '2022-11-10',
+            author: 'מערכת משאבי אנוש'
+          },
+          {
+            id: 't4',
+            type: 'promotion',
+            title: 'קודם לתפקיד בכיר',
+            description: 'קודם למנהל פרויקטים בכיר',
+            date: '2023-06-01',
+            author: 'דוד לוי'
+          }
+        ]
       }
     ];
 
