@@ -12,7 +12,9 @@
       "Bash(npm install)",
       "Bash(git checkout:*)",
       "Bash(git commit:*)",
-      "Bash(git remote set-url:*)"
+      "Bash(git remote set-url:*)",
+      "Bash(git push:*)",
+      "Bash(npx:*)"
     ],
     "deny": []
   }

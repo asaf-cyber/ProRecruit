@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
@@ -9,21 +9,31 @@ import {
   Calendar,
   Bell,
   Bot,
-  ExternalLink,
   Building2,
   Truck,
   User,
   UserCog,
-  X,
-  Menu,
   Shield,
-  Zap,
   Mail,
   Video,
   Settings,
-  Users,
-  LogOut
+  LogOut,
+  ChevronDown,
+  ChevronUp,
+  Menu,
+  X
 } from 'lucide-react';
+
+// Mock user permissions (in real app, get from auth context)
+const mockUserPermissions = {
+  role: 'admin', // admin, manager, employee, recruiting, sales, finance, ops
+  canViewPortalStats: true,
+  canAccessClientPortal: true,
+  canAccessVendorPortal: true,
+  canAccessCandidatePortal: true,
+  canAccessEmployeePortal: true,
+  canAccessAdminPortal: true
+};
 
 interface LeftSidebarProps {
   isMobile?: boolean;
@@ -32,90 +42,176 @@ interface LeftSidebarProps {
   collapsed?: boolean;
 }
 
+interface BadgeConfig {
+  count: number;
+  color: 'red' | 'green' | 'blue' | 'orange';
+}
+
+interface CommunicationTool {
+  name: string;
+  href: string;
+  icon: any;
+  description: string;
+  badge?: BadgeConfig;
+  status?: 'online' | 'offline';
+  alwaysVisible: boolean;
+}
+
+interface Portal {
+  name: string;
+  href: string;
+  icon: any;
+  description: string;
+  userCount?: string;
+  requiredPermissions: string[];
+  alwaysVisible: boolean;
+}
+
 export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collapsed: externalCollapsed }: LeftSidebarProps) {
-  const [internalCollapsed, setInternalCollapsed] = useState(false);
+  const [internalCollapsed, setInternalCollapsed] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('leftSidebarCollapsed') === 'true';
+    }
+    return false;
+  });
+  
+  const [communicationExpanded, setCommunicationExpanded] = useState(true);
+  const [portalsExpanded, setPortalsExpanded] = useState(true);
+  
   const collapsed = isMobile ? false : (externalCollapsed ?? internalCollapsed);
   const pathname = usePathname();
 
-  const communicationTools = [
+  // Save collapsed state to localStorage
+  useEffect(() => {
+    if (!isMobile && externalCollapsed === undefined) {
+      localStorage.setItem('leftSidebarCollapsed', internalCollapsed.toString());
+    }
+  }, [internalCollapsed, isMobile, externalCollapsed]);
+
+  const toggleCollapsed = () => {
+    setInternalCollapsed(!internalCollapsed);
+  };
+
+  // Communication tools configuration
+  const communicationTools: CommunicationTool[] = [
     { 
-      name: 'צ׳אט משתמשים פנימי', 
+      name: 'צ׳אט משתמשים', 
       href: '/chat', 
       icon: MessageSquare, 
-      description: 'תקשורת פנימית Slack-like', 
-      badge: '3', 
-      badgeColor: 'bg-red-500' 
+      description: 'תקשורת פנימית מהירה', 
+      badge: { count: 7, color: 'red' },
+      alwaysVisible: true
     },
     { 
       name: 'WhatsApp אישי', 
       href: '/whatsapp', 
       icon: Phone, 
       description: 'אינטגרציה לפי מספר אישי', 
-      badge: '7', 
-      badgeColor: 'bg-green-500' 
+      badge: { count: 23, color: 'green' },
+      alwaysVisible: true
     },
     { 
-      name: 'לוח שנה צבעוני', 
+      name: 'לוח שנה', 
       href: '/calendar', 
       icon: Calendar, 
-      description: 'ראיונות, חתימות, משימות', 
-      badge: '12', 
-      badgeColor: 'bg-blue-500' 
+      description: 'ראיונות וחתימות', 
+      badge: { count: 5, color: 'blue' },
+      alwaysVisible: true
     },
     { 
       name: 'התראות חכמות', 
       href: '/notifications', 
       icon: Bell, 
-      description: 'התראות מערכת AI', 
-      badge: '2', 
-      badgeColor: 'bg-orange-500' 
+      description: 'התראות AI ומערכת', 
+      badge: { count: 12, color: 'orange' },
+      alwaysVisible: true
     },
     { 
-      name: 'בועת AI קבועה', 
+      name: 'עוזר AI', 
       href: '/ai-assistant', 
       icon: Bot, 
-      description: 'LLM Assistant זמין 24/7', 
-      status: 'online' 
+      description: 'זמין תמיד לעזרה', 
+      status: 'online',
+      alwaysVisible: true
     },
   ];
 
-  const portals = [
+  // Portals configuration with permissions
+  const portals: Portal[] = [
     { 
       name: 'פורטל לקוח', 
       href: '/client-portal', 
       icon: Building2, 
       description: 'גישה מוגבלת ללקוחות', 
-      users: '45 לקוחות' 
+      userCount: '45 לקוחות',
+      requiredPermissions: ['canAccessClientPortal'],
+      alwaysVisible: false
     },
     { 
       name: 'פורטל ספק', 
       href: '/vendor-portal', 
       icon: Truck, 
       description: 'מערכת ספקים בזמן אמת', 
-      users: '28 ספקים' 
+      userCount: '28 ספקים',
+      requiredPermissions: ['canAccessVendorPortal'],
+      alwaysVisible: false
     },
     { 
       name: 'פורטל מועמד', 
       href: '/candidate-portal', 
       icon: User, 
-      description: 'חוויית מועמד מותאמת אישית', 
-      users: '312 מועמדים' 
+      description: 'חוויית מועמד מותאמת', 
+      userCount: '312 מועמדים',
+      requiredPermissions: ['canAccessCandidatePortal'],
+      alwaysVisible: false
     },
     { 
       name: 'פורטל עובד', 
       href: '/employee-portal', 
       icon: Shield, 
-      description: 'מרכז שליטה אישי לעובדים', 
-      users: '144 עובדים' 
+      description: 'מרכז שליטה אישי', 
+      userCount: '144 עובדים',
+      requiredPermissions: ['canAccessEmployeePortal'],
+      alwaysVisible: true
     },
     { 
       name: 'פורטל מנהל מערכת', 
       href: '/admin-portal', 
       icon: UserCog, 
       description: 'כלי ניהול מתקדמים', 
-      users: '8 מנהלים' 
+      userCount: '8 מנהלים',
+      requiredPermissions: ['canAccessAdminPortal'],
+      alwaysVisible: false
     },
   ];
+
+  const hasPermission = (requiredPermissions: string[]) => {
+    return requiredPermissions.every(permission => 
+      mockUserPermissions[permission as keyof typeof mockUserPermissions]
+    );
+  };
+
+  const getBadgeColor = (color: string) => {
+    switch (color) {
+      case 'red': return 'bg-red-500';
+      case 'green': return 'bg-green-500';
+      case 'blue': return 'bg-blue-500';
+      case 'orange': return 'bg-orange-500';
+      default: return 'bg-gray-500';
+    }
+  };
+
+  const formatBadgeCount = (count: number) => {
+    return count > 99 ? '99+' : count.toString();
+  };
+
+  const filteredCommunicationTools = communicationTools.filter(tool => 
+    tool.alwaysVisible || hasPermission([])
+  );
+
+  const filteredPortals = portals.filter(portal => 
+    portal.alwaysVisible || hasPermission(portal.requiredPermissions)
+  );
 
   const sidebarClasses = `
     h-full bg-gray-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 transition-all duration-300 ease-in-out
@@ -138,10 +234,10 @@ export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collaps
             {!collapsed && (
               <div className="flex items-center gap-2">
                 <div className="p-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg">
-                  <Zap size={20} className="text-white" />
+                  <Bot size={20} className="text-white" />
                 </div>
                 <div>
-                  <h2 className="text-lg font-bold text-gray-900 dark:text-white">כלי תקשורת</h2>
+                  <h2 className="text-lg font-bold text-gray-900 dark:text-white">מרכז תקשורת</h2>
                   <p className="text-xs text-gray-500 dark:text-gray-400">ופורטלים ייעודיים</p>
                 </div>
               </div>
@@ -149,7 +245,7 @@ export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collaps
             <div className="flex items-center gap-2">
               {!isMobile && externalCollapsed === undefined && (
                 <button
-                  onClick={() => setInternalCollapsed(!internalCollapsed)}
+                  onClick={toggleCollapsed}
                   className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors"
                   title={collapsed ? 'הרחב סרגל' : 'צמצם סרגל'}
                 >
@@ -173,13 +269,19 @@ export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collaps
           {/* Communication Tools Section */}
           <div className="space-y-1">
             {!collapsed && (
-              <h3 className="px-2 mb-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                כלי תקשורת מתקדמים
-              </h3>
+              <button
+                onClick={() => setCommunicationExpanded(!communicationExpanded)}
+                className="flex items-center justify-between w-full px-2 mb-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              >
+                <span>תקשורת</span>
+                {communicationExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+              </button>
             )}
-            {communicationTools.map((item) => {
+            
+            {(collapsed || communicationExpanded) && filteredCommunicationTools.map((item) => {
               const isActive = pathname === item.href || pathname.startsWith(item.href);
               const Icon = item.icon;
+              const showBadge = item.badge && item.badge.count > 0;
               
               return (
                 <Link
@@ -202,18 +304,16 @@ export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collaps
                     {item.status === 'online' && (
                       <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full animate-pulse"></div>
                     )}
-                    {item.badge && (
-                      <div className={`absolute -top-1 -right-1 min-w-5 h-5 ${item.badgeColor} text-white text-xs rounded-full flex items-center justify-center px-1 font-bold`}>
-                        {item.badge}
+                    {showBadge && (
+                      <div className={`absolute -top-1 -right-1 min-w-5 h-5 ${getBadgeColor(item.badge!.color)} text-white text-xs rounded-full flex items-center justify-center px-1 font-bold animate-pulse`}>
+                        {formatBadgeCount(item.badge!.count)}
                       </div>
                     )}
                   </div>
                   {!collapsed && (
                     <div className="flex-1 min-w-0">
-                      <span className="font-medium text-sm">{item.name}</span>
-                      {item.description && (
-                        <p className="text-xs text-gray-500 dark:text-gray-400 truncate mt-0.5">{item.description}</p>
-                      )}
+                      <span className="font-medium text-sm block">{item.name}</span>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 truncate mt-0.5">{item.description}</p>
                     </div>
                   )}
                   {!collapsed && item.status === 'online' && (
@@ -230,13 +330,19 @@ export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collaps
           {/* Portals Section */}
           <div className="space-y-1">
             {!collapsed && (
-              <h3 className="px-2 mb-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                פורטלים ייעודיים
-              </h3>
+              <button
+                onClick={() => setPortalsExpanded(!portalsExpanded)}
+                className="flex items-center justify-between w-full px-2 mb-3 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+              >
+                <span>פורטלים ייעודיים</span>
+                {portalsExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+              </button>
             )}
-            {portals.map((item) => {
+            
+            {(collapsed || portalsExpanded) && filteredPortals.map((item) => {
               const isActive = pathname === item.href || pathname.startsWith(item.href);
               const Icon = item.icon;
+              const showUserCount = item.userCount && mockUserPermissions.canViewPortalStats;
               
               return (
                 <Link
@@ -259,12 +365,10 @@ export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collaps
                   </div>
                   {!collapsed && (
                     <div className="flex-1 min-w-0">
-                      <span className="font-medium text-sm">{item.name}</span>
-                      {item.description && (
-                        <p className="text-xs text-gray-500 dark:text-gray-400 truncate mt-0.5">{item.description}</p>
-                      )}
-                      {item.users && (
-                        <p className="text-xs text-blue-600 dark:text-blue-400 truncate mt-0.5 font-medium">{item.users}</p>
+                      <span className="font-medium text-sm block">{item.name}</span>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 truncate mt-0.5">{item.description}</p>
+                      {showUserCount && (
+                        <p className="text-xs text-blue-600 dark:text-blue-400 truncate mt-0.5 font-medium">{item.userCount}</p>
                       )}
                     </div>
                   )}
@@ -274,7 +378,7 @@ export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collaps
           </div>
         </div>
 
-        {/* AI Assistant Chat Bubble */}
+        {/* AI Assistant Floating Bubble */}
         {!collapsed && (
           <div className="p-4 border-t border-gray-200 dark:border-gray-700">
             <div className="relative">
@@ -286,8 +390,8 @@ export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collaps
                     <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 border-2 border-white rounded-full animate-pulse"></div>
                   </div>
                   <div className="text-right flex-1">
-                    <span className="font-bold text-base block">AI Assistant 🤖</span>
-                    <p className="text-sm opacity-90 mt-0.5">זמין 24/7 לעזרה מיידית</p>
+                    <span className="font-bold text-base block">עוזר AI 🤖</span>
+                    <p className="text-sm opacity-90 mt-0.5">זמין תמיד לעזרה מיידית</p>
                     <div className="flex items-center gap-1 mt-1 justify-end">
                       <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></div>
                       <span className="text-xs opacity-75 font-medium">מחובר</span>
@@ -304,18 +408,24 @@ export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collaps
         {collapsed && (
           <div className="p-2 border-t border-gray-200 dark:border-gray-700 space-y-2">
             <div className="relative">
-              <button className="w-full p-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all duration-200 group" title="AI Assistant">
+              <button className="w-full p-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all duration-200 group" title="עוזר AI">
                 <Bot size={20} />
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 border border-white rounded-full animate-pulse"></div>
               </button>
             </div>
-            <button className="w-full p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors relative" title="התראות">
-              <Bell size={18} />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></div>
-            </button>
-            <button className="w-full p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" title="הגדרות">
-              <Settings size={18} />
-            </button>
+            
+            {/* Quick action buttons in collapsed mode */}
+            <div className="flex flex-col gap-1">
+              <button className="w-full p-2 text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors" title="אימייל">
+                <Mail size={18} />
+              </button>
+              <button className="w-full p-2 text-green-600 hover:bg-green-50 dark:hover:bg-green-900/20 rounded-lg transition-colors" title="וידאו">
+                <Video size={18} />
+              </button>
+              <button className="w-full p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors" title="הגדרות">
+                <Settings size={18} />
+              </button>
+            </div>
           </div>
         )}
 
@@ -324,7 +434,7 @@ export function LeftSidebar({ isMobile = false, isOpen = false, onClose, collaps
           {!collapsed && (
             <div className="mb-4">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">מהירות מערכת</span>
+                <span className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">פעולות מהירות</span>
               </div>
               <div className="grid grid-cols-3 gap-2">
                 <button className="p-2 bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded hover:bg-blue-200 dark:hover:bg-blue-900/40 transition-colors group" title="אימייל">
